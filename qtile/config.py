@@ -114,9 +114,10 @@ keys.extend(
         Key([mod], "Right", lazy.screen.next_group()),
         Key([mod], "Left", lazy.screen.prev_group()),
         Key([mod], "b", lazy.spawn("firefox")),
-        Key([mod], "p", lazy.spawn("dmenu_run")),
+        Key([mod], "p", lazy.spawn("dmenu_run -l 5 -nb " + colors["background"] + " -sb " + colors["green"])), 
         Key([mod], "d", lazy.spawn("flatpak run com.discordapp.Discord")),
-        Key([mod, "shift"], "s", lazy.spawn("flameshot gui"))
+        Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
+        Key([mod], "m", lazy.window.toggle_fullscreen())
     ]    
 )
 
@@ -242,7 +243,7 @@ custom_bar_settings = [
     widget.Sep(linewidth=0, padding = 6), 
     widget.TextBox(text=" ", **back_bar),
     widget.Clock(format="%A, %B %d - %H:%M", background=colors["green"],foreground="#182111", **back_bar),
-    widget.QuickExit(default_text = "\uf011", countdown_format="\uf057", padding=8, fontsize=15, background=colors["dark"], countdown_start=3),
+    widget.QuickExit(default_text = "\uf011", countdown_format="\uf057", padding=8, fontsize=15, background=colors["dark"], countdown_start=1),
     widget.Sep(linewidth=0, padding = 6),
 ]
 
