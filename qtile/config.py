@@ -116,7 +116,7 @@ keys.extend(
         Key([mod], "b", lazy.spawn("firefox")),
         Key([mod], "p", lazy.spawn("dmenu_run")),
         Key([mod], "d", lazy.spawn("flatpak run com.discordapp.Discord")),
-        Key([mod, "shift"], "s", lazy.spawn("flameshot"))
+        Key([mod, "shift"], "s", lazy.spawn("flameshot gui"))
     ]    
 )
 
