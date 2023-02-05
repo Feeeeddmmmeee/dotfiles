@@ -248,7 +248,7 @@ custom_bar_settings = [
 
 screens = [
 Screen(
-        wallpaper = "./wallpapers/forest.jpg",
+        wallpaper = "~/.config/qtile/wallpapers/forest.jpg",
         wallpaper_mode = "fill",
         top=bar.Bar(
             custom_bar_settings,
