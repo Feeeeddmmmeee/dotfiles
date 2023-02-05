@@ -117,7 +117,12 @@ keys.extend(
         Key([mod], "p", lazy.spawn("dmenu_run -l 5 -nb " + colors["background"] + " -sb " + colors["green"])), 
         Key([mod], "d", lazy.spawn("flatpak run com.discordapp.Discord")),
         Key([mod, "shift"], "s", lazy.spawn("flameshot gui")),
-        Key([mod], "m", lazy.window.toggle_fullscreen())
+        Key([mod], "m", lazy.window.toggle_fullscreen()),
+        Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl s +2%")), 
+        Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl s 2%-")), 
+        Key([], "XF86AudioMute", lazy.spawn("amixer set Master toggle")), 
+        Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 2%+")), 
+        Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 2%-")), 
     ]    
 )
 
@@ -235,8 +240,11 @@ custom_bar_settings = [
     #widget.Sep(padding = 10, size_percent=70, foreground="#000"),
     widget.WindowName(background=colors["gray"], **back_bar),
     widget.Systray(padding=10,**back_bar),
+    widget.TextBox(text="Brightness :", foreground=colors["green"]),
+    widget.Backlight(format = "{percent:2.0%}", update_interval=0.01, backlight_name="intel_backlight", change_command='brightnessctl s {}%'), 
+    widget.Sep(linewidth=0, padding = 6),
     widget.TextBox(text="Volume:", foreground=colors["green"]),
-    widget.Volume(fmt="{}"),
+    widget.Volume(fmt="{}", update_interval=0.01),
     widget.Sep(linewidth=0, padding = 6),
     widget.TextBox(text="Battery:", foreground=colors["green"]),
     widget.Battery(format = "{percent:2.0%}"), 
