@@ -159,7 +159,7 @@ layout_theme = {
 layouts = [
     layout.MonadTall(**layout_theme),
     layout.Max(**layout_theme),
-    layout.Floating(**layout_theme),
+    # layout.Floating(**layout_theme),
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
@@ -248,7 +248,7 @@ custom_bar_settings = [
 
 screens = [
 Screen(
-        wallpaper = "~/Pictures/Wallpapers/wp_forest.jpg",
+        wallpaper = "./wallpapers/forest.jpg",
         wallpaper_mode = "fill",
         top=bar.Bar(
             custom_bar_settings,
