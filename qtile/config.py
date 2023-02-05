@@ -151,7 +151,7 @@ for index, group in enumerate(groups, start=1):
 
 layout_theme = {
         "border_width": 2,
-        "margin": 8,
+        "margin": 10,
         "border_focus": colors["light_green"], 
         "border_normal": colors["background"]
         }
