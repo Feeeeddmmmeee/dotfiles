@@ -25,14 +25,17 @@
 # SOFTWARE.
 
 import os
+import socket
 
 from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
 
+from libqtile.scripts.main import VERSION
 from libqtile import bar, layout, extension
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from libqtile.widget import base
 
 colors = {
     "dark": "#0c1210",
@@ -219,6 +222,18 @@ back_bar = {
     ]
 }
 
+def get_wifi_icon():
+    ip = socket.gethostbyname(socket.gethostname())
+    connected = ip != "127.0.0.2"
+    return "󰖩" if connected else "󰤮"
+
+class WiFiWidget(base.ThreadPoolText):
+    def __init__(self, default_text, **config):
+        super().__init__(default_text, **config)
+ 
+    def poll(self):     
+        return get_wifi_icon() 
+
 custom_bar_settings = [
     widget.Sep(linewidth=0, padding = 6, background=colors["dark"]),
     widget.CurrentLayoutIcon(
@@ -251,6 +266,7 @@ custom_bar_settings = [
     widget.Sep(linewidth=0, padding = 6), 
     widget.TextBox(text=" ", **back_bar),
     widget.Clock(format="%A, %B %d - %H:%M", background=colors["green"],foreground="#182111", **back_bar),
+    WiFiWidget("", update_interval=1, background=colors["dark"], padding=8, fontsize=15, mouse_callbacks = {"Button1": lazy.spawn("airplane")}),
     widget.QuickExit(default_text = "\uf011", countdown_format="\uf057", padding=8, fontsize=15, background=colors["dark"], countdown_start=1),
     widget.Sep(linewidth=0, padding = 6),
 ]
@@ -312,4 +328,4 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 # wmname = "LG3D"
-wmname = "qtile"
+wmname = f"Qtile {VERSION}"
