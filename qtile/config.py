@@ -223,10 +223,16 @@ back_bar = {
     ]
 }
 
-def get_wifi_icon_old():
-    ip = socket.gethostbyname(socket.gethostname())
-    connected = ip != "127.0.0.2"
-    return "󰖩" if connected else "󰤮" # 󰤫 󰤯
+def get_connection_strength():
+    access_points = nmcli.device.wifi()
+    for point in access_points:
+        if point.in_use:
+            return point.signal
+
+    return 0
+
+wifi = ["󰤟", "󰤢", "󰤥", "󰤨"]
+
 
 def get_wifi_icon():
     #nmcli.disable_use_sudo()
@@ -236,9 +242,10 @@ def get_wifi_icon():
     if info.state == nmcli.NetworkManagerState.DISCONNECTED:
         return "󰤯"
     if info.state == nmcli.NetworkManagerState.CONNECTING:
-        return "󱛇"
+        return "󰤩"#"󱛇"
     if info.state in (nmcli.NetworkManagerState.CONNECTED_GLOBAL, nmcli.NetworkManagerState.CONNECTED_SITE):
-        return "󰖩"
+        #return "󰖩"#󰤨 󰤥 󰤢 󰤟
+        return wifi[round(get_connection_strength()/25)] 
 
     return "..."
 
