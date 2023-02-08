@@ -26,6 +26,7 @@
 
 import os
 import socket
+import nmcli
 
 from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
@@ -222,10 +223,24 @@ back_bar = {
     ]
 }
 
-def get_wifi_icon():
+def get_wifi_icon_old():
     ip = socket.gethostbyname(socket.gethostname())
     connected = ip != "127.0.0.2"
-    return "󰖩" if connected else "󰤮"
+    return "󰖩" if connected else "󰤮" # 󰤫 󰤯
+
+def get_wifi_icon():
+    #nmcli.disable_use_sudo()
+    info = nmcli.general()
+    if not info.wifi:
+        return "󰤮"
+    if info.state == nmcli.NetworkManagerState.DISCONNECTED:
+        return "󰤯"
+    if info.state == nmcli.NetworkManagerState.CONNECTING:
+        return "󱛇"
+    if info.state in (nmcli.NetworkManagerState.CONNECTED_GLOBAL, nmcli.NetworkManagerState.CONNECTED_SITE):
+        return "󰖩"
+
+    return "..."
 
 class WiFiWidget(base.ThreadPoolText):
     def __init__(self, default_text, **config):
@@ -263,12 +278,11 @@ custom_bar_settings = [
     widget.Sep(linewidth=0, padding = 6),
     widget.TextBox(text="Battery:", foreground=colors["green"]),
     widget.Battery(format = "{percent:2.0%}"), 
-    widget.Sep(linewidth=0, padding = 6), 
     widget.TextBox(text=" ", **back_bar),
     widget.Clock(format="%A, %B %d - %H:%M", background=colors["green"],foreground="#182111", **back_bar),
-    WiFiWidget("", update_interval=1, background=colors["dark"], padding=8, fontsize=15, mouse_callbacks = {"Button1": lazy.spawn("airplane")}),
+    WiFiWidget("", update_interval=0.1, background=colors["dark"], padding=8, fontsize=15, mouse_callbacks = {"Button1": lazy.spawn("airplane")}),
     widget.QuickExit(default_text = "\uf011", countdown_format="\uf057", padding=8, fontsize=15, background=colors["dark"], countdown_start=1),
-    widget.Sep(linewidth=0, padding = 6),
+    widget.Sep(linewidth=0, padding = 6, background=colors["dark"]),
 ]
 
 screens = [
