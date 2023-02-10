@@ -5,6 +5,7 @@
 # Copyright (c) 2012 Craig Barnes
 # Copyright (c) 2013 horsik
 # Copyright (c) 2013 Tao Sauvage
+# Copyright (c) 2023 Feeeeddmmmeee
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -25,8 +26,8 @@
 # SOFTWARE.
 
 import os
-import socket
 import nmcli
+import math
 
 from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
@@ -231,11 +232,17 @@ def get_connection_strength():
 
     return 0
 
-wifi = ["󰤟", "󰤢", "󰤥", "󰤨"]
+wifi_icons = ["󰤟", "󰤢", "󰤥", "󰤨"]
 
+def get_wifi_name():
+    access_points = nmcli.device.wifi()
+    for point in access_points:
+        if point.in_use:
+            return point.ssid
+
+    return "Not connected"
 
 def get_wifi_icon():
-    #nmcli.disable_use_sudo()
     info = nmcli.general()
     if not info.wifi:
         return "󰤮"
@@ -245,15 +252,16 @@ def get_wifi_icon():
         return "󰤩"#"󱛇"
     if info.state in (nmcli.NetworkManagerState.CONNECTED_GLOBAL, nmcli.NetworkManagerState.CONNECTED_SITE):
         #return "󰖩"#󰤨 󰤥 󰤢 󰤟
-        return wifi[round(get_connection_strength()/25)] 
+        return wifi_icons[math.floor(get_connection_strength()/25)] 
 
-    return "..."
+    return ""
 
 class WiFiWidget(base.ThreadPoolText):
     def __init__(self, default_text, **config):
+        nmcli.disable_use_sudo()
         super().__init__(default_text, **config)
- 
-    def poll(self):     
+
+    def poll(self):   
         return get_wifi_icon() 
 
 custom_bar_settings = [
