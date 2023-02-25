@@ -28,6 +28,7 @@
 import os
 import nmcli
 import math
+import subprocess
 
 from qtile_extras import widget
 from qtile_extras.widget.decorations import PowerLineDecoration
@@ -234,7 +235,7 @@ def get_connection_strength():
 
 wifi_icons = ["󰤟", "󰤢", "󰤥", "󰤨"]
 
-def get_wifi_name():
+def get_wifi_ssid():
     access_points = nmcli.device.wifi()
     for point in access_points:
         if point.in_use:
@@ -262,7 +263,28 @@ class WiFiWidget(base.ThreadPoolText):
         super().__init__(default_text, **config)
 
     def poll(self):   
-        return get_wifi_icon() 
+        return get_wifi_icon()
+
+def get_bluetooth_icon():
+    # 󰂯 󰂲
+    try:
+        output = subprocess.check_output(["bluetoothctl", "show"])
+        lines = output.decode().split("\n")
+        for line in lines:
+            if "Powered: yes" in line:
+                return "󰂯"
+
+    except:
+        pass
+
+    return ""
+
+class BluetoothWidget(base.ThreadPoolText):
+    def __init__(self, default_text, **config):
+        super().__init__(default_text, **config)
+
+    def poll(self):
+        return get_bluetooth_icon()
 
 custom_bar_settings = [
     widget.Sep(linewidth=0, padding = 6, background=colors["dark"]),
@@ -296,6 +318,7 @@ custom_bar_settings = [
     widget.TextBox(text=" ", **back_bar),
     widget.Clock(format="%A, %B %d - %H:%M", background=colors["green"],foreground="#182111", **back_bar),
     WiFiWidget("", update_interval=0.1, background=colors["dark"], padding=8, fontsize=15, mouse_callbacks = {"Button1": lazy.spawn("airplane")}),
+    #BluetoothWidget("", update_interval=0.1, background=colors["dark"], padding=8, fontsize=15), 
     widget.QuickExit(default_text = "\uf011", countdown_format="\uf057", padding=8, fontsize=15, background=colors["dark"], countdown_start=1),
     widget.Sep(linewidth=0, padding = 6, background=colors["dark"]),
 ]
