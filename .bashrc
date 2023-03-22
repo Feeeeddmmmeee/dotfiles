@@ -16,6 +16,11 @@ wifi()
 # dotfiles repo
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
+alias la='ls -A'
+alias ..='cd ..'
+alias mv='mv -i'
+alias rv='rm -i'
+
 # simplified c compilation script
 # $1 - the file to compile
 # $2 - name of the output file. defaults to the cpp file with its extension removed
