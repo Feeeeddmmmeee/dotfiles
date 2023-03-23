@@ -37,7 +37,10 @@ class VolumeIcon(base.ThreadPoolText):
     def get_volume_icon(self):
         if self.get_muted():
             return self.muted
-        return self.volume_icons[math.floor(self.get_volume()/33.33)]
+
+        index = math.floor(self.get_volume()/33.33)
+        index = index if index < 3 else 2
+        return self.volume_icons[index]
 
     def get_volume(self):
         info = subprocess.run(["pamixer", "--get-volume"], capture_output=True).stdout
