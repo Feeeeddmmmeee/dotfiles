@@ -282,14 +282,16 @@ custom_bar_settings = [
         full_char = "󰁹",
         low_foreground = catppuccin["red"],
         low_percentage=0.2,
+        battery=0,
         format="{percent:2.0%}"
     ),
-    #widget.Battery(
-    #    low_foreground = catppuccin["red"],
-    #    low_percentage=1,
-    #    battery=0,
-    #    format="{percent:2.0%}"
-    #),
+    widget.TextBox(text="/"),
+    widget.Battery(
+        low_foreground = catppuccin["red"],
+        low_percentage=0.2,
+        battery=1,
+        format="{percent:2.0%}"
+    ),
     
 
     # ---------------CLOCK-----------------

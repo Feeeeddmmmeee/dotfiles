@@ -14,7 +14,9 @@ class BatteryIcon(base.ThreadPoolText):
 
     def poll(self):
         arr = self.charging_icons if self.is_charging() else self.discharging_icons
-        return arr[math.floor(self.get_battery_level()/10)]
+        index = math.floor(self.get_battery_level()/10)
+        #return str(index)
+        return arr[index]
 
     def is_charging(self):
         battery = psutil.sensors_battery()
