@@ -32,6 +32,8 @@ from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 
+from widgets import WiFiIcon, VolumeIcon, BatteryIcon
+
 @hook.subscribe.startup_once
 def startup():
     home = os.path.expanduser("~/.config/qtile/startup.sh")
@@ -190,7 +192,8 @@ widget_defaults = dict(
     font="Hack Nerd Font Bold",
     fontsize=12,
     padding=3,
-    background = catppuccin["crust"]
+    background = catppuccin["crust"],
+    foreground = catppuccin["text"]
 )
 extension_defaults = widget_defaults.copy()
 
@@ -216,10 +219,18 @@ default_bar_settings = [
 
 custom_bar_settings = [
     widget.CurrentLayoutIcon(
-        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")]
+        custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
+        scale = 0.7
     ),
-    widget.CurrentLayout(),
-    widget.GroupBox(),
+    #widget.CurrentLayout(),
+    widget.GroupBox(
+        highlight_color = catppuccin["base"],
+        this_current_screen_border = catppuccin["lavender"],
+        highlight_method = "line",
+        active = catppuccin["text"],
+        inactive = catppuccin["overlay0"],
+        urgent_border = catppuccin["red"]
+    ),
     
     # ------------------------------------
 
@@ -227,14 +238,72 @@ custom_bar_settings = [
     widget.WindowName(format="{class}"),
     widget.Spacer(length=bar.STRETCH),
 
-    # ------------------------------------
-   
-    widget.Wlan(),
-    widget.PulseVolume(
-        update_interval = 0.1
+    # ---------------VOLUME----------------
+
+    VolumeIcon(
+        update_interval = 0.1,
+        foreground = catppuccin["lavender"],
+        fontsize=20
     ),
-    widget.Battery(format="{percent:2.0%}"),
-    widget.Clock(format="%A, %B %d - %H:%M"),
+
+    widget.Volume(),
+
+    
+    # ---------------WIFI-----------------
+    widget.Sep(linewidth = 0, padding=15),
+  
+    WiFiIcon(
+        update_interval=0.1,
+        foreground = catppuccin["lavender"],
+        fontsize=16
+    ),
+
+    widget.Wlan(
+        disconnected_message="Disconnected",
+        format="{essid}",
+        mouse_callbacks = {
+            "Button1": lazy.spawn("wifi-toggle")
+        }
+    ),
+
+    
+    # --------------BATTERY----------------
+    widget.Sep(linewidth = 0, padding=15),
+
+    BatteryIcon(
+        update_interval = 0.1,
+        foreground = catppuccin["lavender"],
+        fontsize = 15 
+    ),
+
+    widget.Battery(
+        charge_char="󰂅",
+        discharge_char="󰁹",
+        full_char = "󰁹",
+        low_foreground = catppuccin["red"],
+        low_percentage=0.2,
+        format="{percent:2.0%}"
+    ),
+    #widget.Battery(
+    #    low_foreground = catppuccin["red"],
+    #    low_percentage=1,
+    #    battery=0,
+    #    format="{percent:2.0%}"
+    #),
+    
+
+    # ---------------CLOCK-----------------
+    widget.Sep(linewidth = 0, padding=15),
+
+    widget.TextBox(
+        text = "", 
+        foreground = catppuccin["lavender"],
+        fontsize=15
+    ),
+
+    widget.Clock(
+        format="%A, %B %d - %H:%M"
+    ),
 ]
 
 arch_wp = "~/Pictures/arch_wallpaper_catppuccin.png"

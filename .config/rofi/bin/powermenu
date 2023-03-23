@@ -79,9 +79,9 @@ case $chosen in
         sh $HOME/.local/bin/lock
         ;;
     $suspend)
-	mpc -q pause
-	pamixer -m
-	sh $HOME/.local/bin/lock
+	#mpc -q pause
+	#pamixer -m
+	#sh $HOME/.local/bin/lock
 	systemctl suspend
         ;;
     $logout)

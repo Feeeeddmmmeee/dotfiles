@@ -2,7 +2,8 @@
 # ~/.bashrc
 #
 
-wifi()
+# toggles the wifi
+wifi-toggle()
 {
 	WIFI="$(nmcli r wifi | awk 'FNR = 2 {print $1}')"
 	if [ "$WIFI" == "enabled" ]
@@ -13,7 +14,7 @@ wifi()
 	fi
 }
 
-# dotfiles repo
+# dotfiles bare repo (use instead of 'git' for source control)
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
 alias la='ls -A'
