@@ -1,5 +1,9 @@
-require("custom.remap")
 require("custom.set")
+
+-- Remaps because putting them in ./lua/custom didnt work 
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>r", vim.cmd.PackerSync)
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- Colors
 vim.cmd.colorscheme "catppuccin"
@@ -10,7 +14,13 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   	-- Packer can manage itself
   	use 'wbthomason/packer.nvim'
-	
+
+	-- Lualine
+	use { 
+		'nvim-lualine/lualine.nvim',
+		require = { 'kyazdani42/nvim-web-devicons', opt = true }
+	}
+
 	-- Colors
 	use { "catppuccin/nvim", as = "catppuccin" }
 	
