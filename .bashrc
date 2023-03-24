@@ -20,7 +20,7 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias la='ls -A'
 alias ..='cd ..'
 alias mv='mv -i'
-alias rv='rm -i'
+alias rm='rm -i'
 
 # simplified c compilation script
 # $1 - the file to compile
@@ -31,6 +31,7 @@ c()
 	g++ -o $OUTPUT $1 && ./$OUTPUT
 }
 
+# copies a template c++ file and opens it in nvim
 cnvim()
 {
 	FILE_PATH=${1:-main.cpp}
