@@ -45,7 +45,6 @@ catppuccin = {
         "pink": "#f5c2e7",
         "mauve": "#cba6f7",
         "red": "#f38ba8",
-        "rosewater": "#",
         "maroon": "#eba0ac",
         "peach": "#fab387",
         "yellow": "#f9e2af",
