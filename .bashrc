@@ -31,10 +31,18 @@ c()
 	g++ -o $OUTPUT $1 && ./$OUTPUT
 }
 
+cnvim()
+{
+	FILE_PATH=${1:-main.cpp}
+	cat "${HOME}/.config/nvim/templates/cpp_bits.cpp" > $FILE_PATH
+
+	nvim -c 'startinsert' +10 $FILE_PATH
+}
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
-[ -r /home/janek/.byobu/prompt ] && . /home/janek/.byobu/prompt   #byobu-prompt#
+[ -r $HOME/.byobu/prompt ] && . $HOME/.byobu/prompt   #byobu-prompt#
