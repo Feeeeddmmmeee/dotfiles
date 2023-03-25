@@ -32,6 +32,13 @@ else
 	LINE=10
 fi
 
+# Ask user for the filename
+echo -n "Enter fhe filename: " && read FILE_PATH
+if [ "$FILE_PATH" == '' ] ;
+then
+	FILE_PATH="main.cpp"
+fi
+
 # Print variables for testing
 # echo "U_FLAG=$U_FLAG"
 # echo "FILE_PATH=$FILE_PATH"
