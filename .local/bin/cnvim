@@ -25,8 +25,8 @@ fi
 
 if [ "$U_FLAG" = true ] ;
 then
-	TEMPLATE="${HOME}/.config/nvim/templates/cpp_bits_using.cpp"
-	LINE=19
+	TEMPLATE="${HOME}/.config/nvim/templates/cpp_bits_additional_defines.cpp"
+	LINE=20
 else
 	TEMPLATE="${HOME}/.config/nvim/templates/cpp_bits.cpp"
 	LINE=10
