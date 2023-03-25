@@ -1,21 +1,41 @@
 #!/bin/bash
-#copies a template c++ file and opens it in nvim
 
+# Initialize FILE_PATH to 'main.cpp'
+FILE_PATH='main.cpp'
 U_FLAG=false
-while getopts 'u' flag; do
-	case "${flag}" in 
-		u) U_FLAG=true ;;
-		*) echo "other" ;;
+
+# Parse command line options
+while getopts ":u" opt; do
+	case $opt in
+		u)
+			U_FLAG=true
+			;;
+		\?)
+			echo "Invalid option: -$OPTARG" >&2
+			exit 1
+			;;
 	esac
 done
 
-if [ "$U_FLAG" = true ] ; 
-then
-	FILE_PATH=${2:-main.cpp}
-	cat "${HOME}/.config/nvim/templates/cpp_bits_using.cpp" > $FILE_PATH
-	nvim -c 'startinsert' +19 $FILE_PATH
-else
-	FILE_PATH=${1:-main.cpp}
-	cat "${HOME}/.config/nvim/templates/cpp_bits.cpp" > $FILE_PATH
-	nvim -c 'startinsert' +10 $FILE_PATH
+# Get positional argument (if any)
+shift $((OPTIND -1))
+if [ $# -eq 1 ]; then
+	FILE_PATH=$1
 fi
+
+if [ "$U_FLAG" = true ] ;
+then
+	TEMPLATE="${HOME}/.config/nvim/templates/cpp_bits_using.cpp"
+	LINE=19
+else
+	TEMPLATE="${HOME}/.config/nvim/templates/cpp_bits.cpp"
+	LINE=10
+fi
+
+# Print variables for testing
+# echo "U_FLAG=$U_FLAG"
+# echo "FILE_PATH=$FILE_PATH"
+# echo "TEMPLATE=$TEMPLATE"
+
+cp "$TEMPLATE" "$FILE_PATH"
+nvim -c 'startinsert' +"$LINE" "$FILE_PATH"
