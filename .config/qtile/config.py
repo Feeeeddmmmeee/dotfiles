@@ -174,7 +174,8 @@ layout_theme = {
 layouts = [
     layout.MonadTall(**layout_theme),
     layout.Columns(**layout_theme),
-    #layout.Max(**layout_theme),
+    # layout.Floating(**layout_theme),
+    # layout.Max(**layout_theme),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
@@ -228,16 +229,36 @@ custom_bar_settings = [
         highlight_method = "line",
         active = catppuccin["text"],
         inactive = catppuccin["overlay0"],
-        urgent_border = catppuccin["red"]
+        urgent_border = catppuccin["red"],
+        #hide_unused = True,
+        margin = 6,
+        padding = 6
     ),
     
     # ------------------------------------
 
     #widget.Spacer(length=bar.STRETCH),
-    widget.WindowName(format="{class}"),
+    widget.WindowName(format="{name}"),
     widget.Spacer(length=bar.STRETCH),
 
+    # --------------UPDADES---------------
+    widget.TextBox(
+        text = "", 
+        foreground = catppuccin["lavender"],
+        fontsize=15
+    ),
+
+    widget.CheckUpdates(
+        distro="Arch_checkupdates",
+        display_format = '{updates} Updates',
+        colour_have_updates = catppuccin['text'],
+        colour_no_updates = catppuccin['text'],
+        no_update_string = "No Updates",
+        initial_text = "Checking for updates...",
+    ),
+
     # ---------------VOLUME----------------
+    widget.Sep(linewidth = 0, padding=15),
 
     VolumeIcon(
         update_interval = 0.1,
@@ -312,7 +333,7 @@ coffee_cat_wp = "~/.config/qtile/wallpapers/coffee_cat.png"
 
 screens = [
     Screen(
-        wallpaper = coffee_cat_wp,
+        wallpaper = "~/.config/qtile/wallpapers/coffee_cat.png",
         wallpaper_mode = "fill",
         top=bar.Bar(
             custom_bar_settings,

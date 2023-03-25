@@ -37,6 +37,9 @@ return require('packer').startup(function(use)
 	-- Undo Tree
 	use 'mbbill/undotree'
 
+	-- Thing that closes brackets for me
+	use 'rstacruz/vim-closer'
+
 	-- LSP
 	use {
   		'VonHeikemen/lsp-zero.nvim',
