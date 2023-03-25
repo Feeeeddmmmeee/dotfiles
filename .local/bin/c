@@ -1,0 +1,7 @@
+#!/bin/bash
+#simplified c compilation script
+#$1 - file to compile
+#$2 - name of the output file. defaults to $1 with .cpp removed
+#
+OUTPUT=${2:-${1%.cpp}}
+g++ -o $OUTPUT $1 && ./$OUTPUT

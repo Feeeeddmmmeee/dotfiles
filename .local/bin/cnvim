@@ -1,0 +1,21 @@
+#!/bin/bash
+#copies a template c++ file and opens it in nvim
+
+U_FLAG=false
+while getopts 'u' flag; do
+	case "${flag}" in 
+		u) U_FLAG=true ;;
+		*) echo "other" ;;
+	esac
+done
+
+if [ "$U_FLAG" = true ] ; 
+then
+	FILE_PATH=${2:-main.cpp}
+	cat "${HOME}/.config/nvim/templates/cpp_bits_using.cpp" > $FILE_PATH
+	nvim -c 'startinsert' +19 $FILE_PATH
+else
+	FILE_PATH=${1:-main.cpp}
+	cat "${HOME}/.config/nvim/templates/cpp_bits.cpp" > $FILE_PATH
+	nvim -c 'startinsert' +10 $FILE_PATH
+fi

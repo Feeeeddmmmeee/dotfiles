@@ -1,0 +1,8 @@
+#!/bin/bash
+WIFI="$(nmcli r wifi | awk 'FNR = 2 {print $1}')"
+if [ "$WIFI" == "enabled" ]
+then 
+	nmcli r wifi off
+else
+	nmcli r wifi on
+fi
