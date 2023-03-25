@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Initialize FILE_PATH to 'main.cpp'
-FILE_PATH='main.cpp'
+FILE_PATH=''
 U_FLAG=false
 
 # Parse command line options
@@ -33,7 +33,11 @@ else
 fi
 
 # Ask user for the filename
-echo -n "Enter fhe filename: " && read FILE_PATH
+if [ "$FILE_PATH" == '' ] ;
+then
+	echo -n "Enter fhe filename: " && read FILE_PATH
+fi
+
 if [ "$FILE_PATH" == '' ] ;
 then
 	FILE_PATH="main.cpp"
