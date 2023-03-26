@@ -14,7 +14,7 @@ class BatteryIcon(base.ThreadPoolText):
 
     def poll(self):
         arr = self.charging_icons if self.is_charging() else self.discharging_icons
-        index = math.floor(self.get_battery_level()/10)
+        index = math.floor(self.total_battery_percentage()/10)
         #return str(index)
         return arr[index]
 
@@ -22,10 +22,21 @@ class BatteryIcon(base.ThreadPoolText):
         battery = psutil.sensors_battery()
         return battery.power_plugged
 
-    def get_battery_level(self):
-        battery = psutil.sensors_battery()
-        return round(battery.percent)
+    def total_battery_percentage(self):
+        return (self.get_battery_capacity(0) * self.get_battery_level(0) + self.get_battery_capacity(1) * self.get_battery_level(1)) / (self.get_battery_capacity(0) + self.get_battery_capacity(1))
 
+    def get_battery_capacity(self, which):
+        with open(f"/sys/class/power_supply/BAT{which}/energy_full", "r") as f:
+            c = int(f.read().strip())
+
+        return c
+
+    def get_battery_level(self, which):
+        with open(f"/sys/class/power_supply/BAT{which}/capacity", "r") as f:
+            p = int(f.read().strip())
+
+        return p
+            
 class VolumeIcon(base.ThreadPoolText):
     muted = "󰖁"
     volume_icons = ["", "󰖀", "󰕾"]
