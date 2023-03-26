@@ -40,7 +40,7 @@ fi
 
 if [ "$FILE_PATH" == '' ] ;
 then
-	FILE_PATH="main.cpp"
+	FILE_PATH="main"
 fi
 
 # Print variables for testing
@@ -48,5 +48,5 @@ fi
 # echo "FILE_PATH=$FILE_PATH"
 # echo "TEMPLATE=$TEMPLATE"
 
-cp "$TEMPLATE" "$FILE_PATH"
-nvim -c 'startinsert' +"$LINE" "$FILE_PATH"
+cp "$TEMPLATE" "${FILE_PATH}.cpp"
+nvim -c 'startinsert' +"$LINE" "${FILE_PATH}.cpp"
