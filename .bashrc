@@ -7,6 +7,7 @@ alias la='ls -A'
 alias ..='cd ..'
 alias mv='mv -i'
 alias rm='rm -i'
+alias cat='bat --paging=never'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
