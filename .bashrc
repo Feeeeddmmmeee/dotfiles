@@ -8,6 +8,8 @@ alias ..='cd ..'
 alias mv='mv -i'
 alias rm='rm -i'
 alias cat='bat --paging=never'
+alias listwifi='nmcli d wifi list'
+alias connectwifi='nmcli --ask d wifi connect'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
