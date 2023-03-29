@@ -5,6 +5,24 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>r", vim.cmd.PackerSync)
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
+function map(mode, lhs, rhs, opts)
+	local options = { noremap = true }
+	if opts then
+		options = vim.tbl_extend("force", options, opts)
+	end
+	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+-- Bracket Autocompletion
+map('i', '"', '""<left>')
+map('i', "'", "''<left>")
+map('i', "{", "{}<left>")
+map('i', "(", "()<left>")
+map('i', "[", "[]<left>")
+map('i', "{<CR>", "{<CR>}<Esc>O")
+map('i', "(<CR>", "(<CR>)<Esc>O")
+map('i', "[<CR>", "[<CR>]<Esc>O")
+
 -- Colors
 vim.cmd.colorscheme "catppuccin"
 
@@ -36,9 +54,6 @@ return require('packer').startup(function(use)
 
 	-- Undo Tree
 	use 'mbbill/undotree'
-
-	-- Thing that closes brackets for me
-	use 'rstacruz/vim-closer'
 
 	-- LSP
 	use {
