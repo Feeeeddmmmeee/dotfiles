@@ -35,8 +35,8 @@ from libqtile.lazy import lazy
 from widgets import WiFiIcon, VolumeIcon, BatteryIcon
 
 @hook.subscribe.startup_once
-def startup():
-    home = os.path.expanduser("~/.config/qtile/startup.sh")
+def autostart():
+    home = os.path.expanduser("~/.config/qtile/autostart.sh")
     subprocess.Popen([home])
 
 catppuccin = {
@@ -263,7 +263,10 @@ custom_bar_settings = [
     VolumeIcon(
         update_interval = 0.1,
         foreground = catppuccin["lavender"],
-        fontsize=20
+        fontsize=20,
+        mouse_callbacks = {
+            "Button1": lazy.spawn("pamixer -t")
+        }
     ),
 
     widget.Volume(),
@@ -275,14 +278,17 @@ custom_bar_settings = [
     WiFiIcon(
         update_interval=0.1,
         foreground = catppuccin["lavender"],
-        fontsize=16
+        fontsize=16,
+        mouse_callbacks = {
+            "Button1": lazy.spawn("togglewifi")
+        }
     ),
 
     widget.Wlan(
         disconnected_message="Disconnected",
         format="{essid}",
         mouse_callbacks = {
-            "Button1": lazy.spawn("wifi-toggle")
+            "Button1": lazy.spawn("togglewifi")
         }
     ),
 
