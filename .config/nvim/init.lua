@@ -27,6 +27,7 @@ map('i', '""', '""')
 map('i', "{<CR>", "{<CR>}<Esc>O")
 map('i', "(<CR>", "(<CR>)<Esc>O")
 map('i', "[<CR>", "[<CR>]<Esc>O")
+map('i', 'ff', 'for(int i = 0; i < ; ++i)<Left><Left><Left><Left><Left><Left>')
 
 -- Colors
 vim.cmd.colorscheme "catppuccin"
@@ -59,6 +60,9 @@ return require('packer').startup(function(use)
 
 	-- Undo Tree
 	use 'mbbill/undotree'
+
+	-- Discord Rich Presence
+	use 'andweeb/presence.nvim'
 
 	-- LSP
 	use {
