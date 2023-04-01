@@ -245,7 +245,11 @@ custom_bar_settings = [
     widget.TextBox(
         text = "", 
         foreground = catppuccin["lavender"],
-        fontsize=15
+        fontsize=15,
+        mouse_callbacks = {
+            "Button1": lazy.spawn("kitty -T 'System Update' -e sudo pacman -Syu")
+        }
+
     ),
 
     widget.CheckUpdates(
@@ -255,6 +259,10 @@ custom_bar_settings = [
         colour_no_updates = catppuccin['text'],
         no_update_string = "No Updates",
         initial_text = "Checking for updates...",
+        mouse_callbacks = {
+            "Button1": lazy.spawn("kitty -T 'System Update' -e sudo pacman -Syu")
+        }
+
     ),
 
     # ---------------VOLUME----------------
