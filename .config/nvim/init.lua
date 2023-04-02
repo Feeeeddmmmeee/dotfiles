@@ -4,6 +4,7 @@ require("custom.set")
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>r", vim.cmd.PackerSync)
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+vim.keymap.set("n", "<leader>m", ":Mason<CR>")
 
 function map(mode, lhs, rhs, opts)
 	local options = { noremap = true }

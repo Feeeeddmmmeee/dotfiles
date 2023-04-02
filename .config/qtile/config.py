@@ -342,12 +342,12 @@ custom_bar_settings = [
     ),
 ]
 
-arch_wp = "~/Pictures/arch_wallpaper_catppuccin.png"
-coffee_cat_wp = "~/.config/qtile/wallpapers/coffee_cat.png"
+cat = "~/.config/qtile/wallpapers/coffee_cat.png"
+car = "~/.config/qtile/wallpapers/road.jpg"
 
 screens = [
     Screen(
-        wallpaper = "~/.config/qtile/wallpapers/coffee_cat.png",
+        wallpaper = cat,
         wallpaper_mode = "fill",
         top=bar.Bar(
             custom_bar_settings,

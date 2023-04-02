@@ -76,8 +76,8 @@ case $chosen in
 	systemctl reboot
 	;;
     $lock)
-        sh $HOME/.local/bin/lock
-        ;;
+	sudo systemctl restart display-manager
+    ;;
     $suspend)
 	#mpc -q pause
 	#pamixer -m
