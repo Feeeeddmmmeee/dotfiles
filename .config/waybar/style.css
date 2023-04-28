@@ -130,6 +130,12 @@ tooltip {
     border-left: 0px;
     border-right: 0px;
 }
+#battery.warning {
+	color: #f9e2af;
+}
+#battery.critical {
+	color: #f38ba8;
+}
 
 #custom-weather {
     border-radius: 0px 10px 10px 0px;
