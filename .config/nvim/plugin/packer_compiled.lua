@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
-  ["cheatsheet.nvim"] = {
-    loaded = true,
-    path = "/home/janek/.local/share/nvim/site/pack/packer/start/cheatsheet.nvim",
-    url = "https://github.com/sudormrfbin/cheatsheet.nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -154,11 +149,6 @@ _G.packer_plugins = {
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-notify"] = {
-    loaded = true,
-    path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
-  },
   ["nvim-numbertoggle"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-numbertoggle",
@@ -189,15 +179,15 @@ _G.packer_plugins = {
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["popup.nvim"] = {
-    loaded = true,
-    path = "/home/janek/.local/share/nvim/site/pack/packer/start/popup.nvim",
-    url = "https://github.com/nvim-lua/popup.nvim"
-  },
   ["presence.nvim"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/janek/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,

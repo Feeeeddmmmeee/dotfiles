@@ -59,7 +59,7 @@ local doom = {
 	[[ `''                                                                      ``' ]],
 }
 
-random = {nvim, doom}
+local random = {nvim, doom}
 
 require('dashboard').setup({
 	theme = 'doom',

@@ -11,5 +11,3 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
-
-vim.notify = require("notify")

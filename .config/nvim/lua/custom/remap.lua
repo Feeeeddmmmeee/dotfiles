@@ -6,7 +6,9 @@ vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
 vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", ":Telescope file_browser path=%:p:h<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>fb", ":Telescope file_browser<CR>", { noremap = true })
 vim.keymap.set("n", "<leader>r", vim.cmd.PackerSync)
 vim.keymap.set("n", "<leader>d", vim.cmd.Dashboard)
 vim.keymap.set("n", "<leader>m", vim.cmd.Mason)
@@ -14,7 +16,7 @@ vim.keymap.set("n", "<leader>m", vim.cmd.Mason)
 -- Changes word in entire file
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
-function map(mode, lhs, rhs, opts)
+local function map(mode, lhs, rhs, opts)
 	local options = { noremap = true }
 	if opts then
 		options = vim.tbl_extend("force", options, opts)
@@ -32,7 +34,7 @@ map('i', "[]", "[]")
 map('i', "()", "()")
 map('i', "{}", "{}")
 map('i', "''", "''")
-map('i', '""', '""') 
+map('i', '""', '""')
 map('i', "{<CR>", "{<CR>}<Esc>O")
 map('i', "(<CR>", "(<CR>)<Esc>O")
 map('i', "[<CR>", "[<CR>]<Esc>O")
