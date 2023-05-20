@@ -11,6 +11,7 @@ alias listwifi='nmcli d wifi list'
 alias connectwifi='nmcli --ask d wifi connect'
 alias matrix='unimatrix -lnnsss -s95'
 alias clipboard='wl-copy'
+alias icat='kitty +kitten icat'
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
