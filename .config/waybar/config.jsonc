@@ -45,9 +45,9 @@
 		"keyboard-name": "at-translated-set-2-keyboard"
 	},
 	"custom/updates": {
-        "exec": "(yay -Qua) | wc -l",
+        "exec": "(pacman -Qu) | wc -l",
         "interval": 7200,
-        "format": " {}",
+        "format": "󰇚 {} (pacman)",
 		"tooltip": false,
 		"on-click": "kitty --title \"System Update\" -e yay -Syu"
     },
@@ -106,8 +106,8 @@
     "pulseaudio#microphone": {
         "format": "{format_source}",
         "tooltip": false,
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
