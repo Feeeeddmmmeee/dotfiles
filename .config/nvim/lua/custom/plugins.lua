@@ -12,7 +12,7 @@ return require('packer').startup(function(use)
 	}
 
 	-- Colors
-	use { "catppuccin/nvim", as = "catppuccin" }
+	use { 'catppuccin/nvim', as = 'catppuccin' }
 
 	-- Fuzzy Finder
 	use {
@@ -22,14 +22,13 @@ return require('packer').startup(function(use)
 
 	-- File Browser
 	use {
-		"nvim-telescope/telescope-file-browser.nvim",
-		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+		'nvim-telescope/telescope-file-browser.nvim',
+		requires = { 'nvim-telescope/telescope.nvim', 'nvim-lua/plenary.nvim' }
 	}
 
 	-- Nvim Treesitter
+	-- use 'nvim-treesitter/playground'
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use 'nvim-treesitter/nvim-treesitter-context'
-	use 'nvim-treesitter/playground'
 
 	-- Undo Tree
 	use 'mbbill/undotree'
@@ -42,6 +41,25 @@ return require('packer').startup(function(use)
 
 	-- Hiding relative line numers automatically when needed
 	use "sitiom/nvim-numbertoggle"
+
+	-- Smooth scrolling
+	use 'karb94/neoscroll.nvim'
+
+	-- Quickly surround words/lines with brackets etc
+	use {
+		'kylechui/nvim-surround',
+		tag = '*'
+	}
+
+	-- Diagnostics
+	use 'folke/trouble.nvim'
+
+	-- LSP based context bar
+	use {
+		'utilyre/barbecue.nvim',
+		tag = '*',
+		requires = { 'SmiteshP/nvim-navic' }
+	}
 
 	-- LSP
 	use {

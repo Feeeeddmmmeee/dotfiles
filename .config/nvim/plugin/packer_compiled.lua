@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["barbecue.nvim"] = {
+    loaded = true,
+    path = "/home/janek/.local/share/nvim/site/pack/packer/start/barbecue.nvim",
+    url = "https://github.com/utilyre/barbecue.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -139,6 +144,11 @@ _G.packer_plugins = {
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/janek/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -149,30 +159,30 @@ _G.packer_plugins = {
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-navic"] = {
+    loaded = true,
+    path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-navic",
+    url = "https://github.com/SmiteshP/nvim-navic"
+  },
   ["nvim-numbertoggle"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-numbertoggle",
     url = "https://github.com/sitiom/nvim-numbertoggle"
+  },
+  ["nvim-surround"] = {
+    loaded = true,
+    path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-surround",
+    url = "https://github.com/kylechui/nvim-surround"
   },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["nvim-treesitter-context"] = {
-    loaded = true,
-    path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  playground = {
-    loaded = true,
-    path = "/home/janek/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -193,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/home/janek/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   undotree = {
     loaded = true,

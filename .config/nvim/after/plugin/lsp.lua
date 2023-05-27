@@ -1,6 +1,7 @@
 local lsp = require('lsp-zero')
+local lspconfig = require("lspconfig")
 
-require("lspconfig").lua_ls.setup {
+lspconfig.lua_ls.setup {
 	settings = {
 		Lua = {
 			diagnostics = {

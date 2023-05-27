@@ -12,6 +12,8 @@ vim.keymap.set("n", "<leader>fb", ":Telescope file_browser<CR>", { noremap = tru
 vim.keymap.set("n", "<leader>r", vim.cmd.PackerSync)
 vim.keymap.set("n", "<leader>d", vim.cmd.Dashboard)
 vim.keymap.set("n", "<leader>m", vim.cmd.Mason)
+vim.keymap.set("n", "<leader>pd", vim.cmd.TroubleToggle)
+vim.keymap.set("n", "<leader>fm", vim.cmd.HopWord)
 
 -- Changes word in entire file
 vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
