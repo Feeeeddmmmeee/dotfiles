@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ ! -z "$(eww state | grep "reveal_control: false")" ] ; then
+	eww update reveal_control=true
+else
+	eww update reveal_control=false
+fi

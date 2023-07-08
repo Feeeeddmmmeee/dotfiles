@@ -1,0 +1,190 @@
+@use "./catppuccin.scss" as *;
+
+$font: Hack Nerd Font;
+
+.profile-widget {
+	background-color: rgba($base, 0.9);
+	padding: 20px 20px 20px 20px;
+	border-radius: 15px 15px 0px 0px;
+	border-bottom: 5 solid $surface0;
+	
+}
+
+.avatar {
+	background-image: url("./assets/profile_picture_64px.png");
+	min-height: 64px;
+	min-width: 64px;
+	border-radius: 100%;
+	margin: 0em 0em 0em 1em;
+}
+
+.user-hostname {
+	font-family: $font;
+	font-size: 19px;
+	font-weight: bold;
+	color: $text;
+	margin: 0em 0em 0em .8em;
+	margin-top: .6em;
+}
+
+.uptime {
+	font-family: $font;
+	font-size: 15px;
+	font-weight: bold;
+	color: $subtext0;
+	margin: .25em 0em 0em 1em;
+}
+
+.buttons {
+	margin-left: 3em;
+}
+
+.button {
+	color: $text;
+	background-color: $surface0;
+	border-radius: 10px;
+	font-size: 20px;
+	margin: .6em .5em;
+
+	&.lock {
+		padding: 0em 1.05em 0em 1em;
+
+	}
+
+	&.poweroff {
+		padding: 0em 1.2em 0em 1em;
+		color: $red;
+	}
+
+	&:hover {
+		background-color: $surface1;
+	}
+
+}
+
+.second-row {
+	background-color: rgba($base, 0.9);
+	padding: 20px 20px 20px 20px;
+	border-radius: 0px 0px 15px 15px;
+
+}
+
+.date-control {
+	background-color: $surface0;
+	color: $text;
+	font-family: $font;
+	border-radius: 10px;
+
+	padding: 20px 20px 20px 20px;
+	margin: .5em .5em;
+}
+
+.date-text-month {
+	font-size: 15px;
+	color: $subtext0;
+}
+
+.date-text-day {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.weather {
+	background-color: $surface0;
+	color: $text;
+	font-family: $font;
+	border-radius: 10px;
+
+	padding: 20px 20px 20px 20px;
+	margin: .5em .5em;
+	
+	&:hover {
+		background-color: $surface1;
+	}
+}
+
+.weather-desc {
+	font-size: 24px;
+	color: $subtext0;
+}
+
+.weather-temp {
+	font-size: 24px;
+	font-weight: bold;
+
+}
+
+.weather-icon {
+	font-size: 50px;
+	margin-right: .5em;
+	margin-top: .5em;
+}
+
+.battery-prog {
+	trough {
+		background-color: $surface0;
+		border-radius: 10px;
+		margin: .5em .5em;
+		padding: 40px 0 40px 0;
+
+		progress {
+			background-color: $surface1;
+			border-radius: 10px;
+			padding: 40px 0 40px 0;
+		}
+	}
+
+	&.warning {
+		trough {
+			background-color: $surface0;
+			border-radius: 10px;
+			margin: .5em .5em;
+			padding: 40px 0 40px 0;
+
+			progress {
+			background-color: $surface1;
+				border-radius: 10px;
+				padding: 40px 0 40px 0;
+			}
+		}
+	}
+
+	&.critical {
+		trough {
+			background-color: $surface0;
+			border-radius: 10px;
+			margin: .5em .5em;
+			padding: 40px 0 40px 0;
+
+			progress {
+				background-color: rgba(darken($red, 10%), .8);
+				border-radius: 10px;
+				padding: 40px 0 40px 0;
+			}
+		}
+
+	}
+}
+
+.battery-text {
+	color: $subtext0;
+
+	font-family: $font;
+}
+
+.battery-title {
+	font-size: 15px;
+	margin-left: 1.8em;
+}
+
+.battery-percentage {
+	color: $text;
+ 	font-weight: bold;
+	font-size: 20px;
+	margin-left: 1.4em;
+}
+
+.battery-icon {
+	font-size: 30px;
+	margin-left: 2.9em;
+}

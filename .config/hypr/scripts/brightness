@@ -1,0 +1,20 @@
+#!/bin/sh
+
+ICON_PATH='/usr/share/icons/dracula-icons/symbolic/status/'
+
+down() {
+brightnessctl s 5%-
+brightness=$(($(brightnessctl g) * 100 / $(brightnessctl m)))
+dunstify -a "BRIGHTNESS" "Decreasing to $brightness%" -h int:value:"$brightness" -i "$ICON_PATH"display-brightness-symbolic.svg -r 2594 -u low
+}
+
+up() {
+brightnessctl s +5%
+brightness=$(($(brightnessctl g) * 100 / $(brightnessctl m)))
+dunstify -a "BRIGHTNESS" "Increasing to $brightness%" -h int:value:"$brightness" -i "$ICON_PATH"display-brightness-symbolic.svg -r 2594 -u low
+}
+
+case "$1" in
+  up) up;;
+  down) down;;
+esac

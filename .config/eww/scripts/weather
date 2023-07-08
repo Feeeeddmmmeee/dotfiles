@@ -1,0 +1,21 @@
+#!/bin/bash
+
+TIMEOUT=5
+
+if [ $1 == "icon" ] ; then
+	CONDITION=$(timeout $TIMEOUT curl -s wttr.in/\?format="%C" || echo "Error")
+	if [ $(echo "$CONDITION" | grep -i "sun") ] ; then OUTPUT="󰖨"
+	elif [ $(echo "$CONDITION" | grep -i "rain") ] ; then OUTPUT=""
+	elif [ $(echo "$CONDITION" | grep -i "partly") ] ; then OUTPUT=""
+	else OUTPUT=""
+	fi
+
+elif [ $1 == "condition" ] ; then
+	OUTPUT=$(timeout $TIMEOUT curl -s wttr.in/\?format="%C" || echo "Error")
+
+elif [ $1 == "temperature" ] ; then
+	OUTPUT=$(echo $(timeout $TIMEOUT curl -s wttr.in/\?format="%t" || echo "xx°C") | sed 's/+//')
+	
+fi
+
+echo $OUTPUT

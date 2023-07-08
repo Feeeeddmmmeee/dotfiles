@@ -1,0 +1,16 @@
+#!/bin/bash
+
+OUTPUT="$HOME/Pictures/screenshots/$(date +%Y-%m-%d-%T)-screenshot.png"
+
+case "$1" in
+	"select") 
+		grim -g "$(slurp)" $OUTPUT && wl-copy < $OUTPUT
+		notify-send "Screenshot taken." "$OUTPUT" -u normal
+		exit
+		;;
+	*) 
+		grim $OUTPUT && wl-copy < $OUTPUT
+		notify-send "Screenshot taken." "$OUTPUT" -u normal
+		exit
+		;;
+esac

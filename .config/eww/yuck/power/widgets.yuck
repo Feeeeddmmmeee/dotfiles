@@ -1,0 +1,115 @@
+(defwidget control_center []
+  (revealer
+    :transition "slidedown"
+    :reveal reveal_control
+    (box
+      :orientation "v"
+      :space-evenly false
+      :class "control-center"
+      (box 
+        :class "profile-widget"
+        :orientation "h"
+        :halign "start"
+        :space-evenly false
+        (box :class "avatar")
+        (box 
+          :orientation "v" 
+          :space-evenly false
+          (label :class "user-hostname" :halign "start" :text hostname)
+          (label :class "uptime" :halign "start" :text uptime)
+          )
+        (box
+          :class "buttons"
+          :orientation "h"
+          :space-evenly false
+          (button
+            :class "button lock"
+            :onclick "swaylock"
+            ""
+            )
+          (button
+            :class "button poweroff"
+            :onclick "shutdown now"
+            ""
+            )
+          )
+        )
+      (box
+        :class "second-row"
+        :orientation "h"
+        (box
+          :orientation "v"
+          :space-evenly false
+          (box
+            :class "date-control"
+            :orientation "v"
+            :space-evenly false
+            (label 
+              :class "date-text-month"
+              :halign "start"
+              :text control-date
+              )
+            (label
+              :class "date-text-day"
+              :halign "start"
+              :text weekday)
+            )
+          (overlay
+            (progress
+              :class "battery-prog ${EWW_BATTERY.BAT1.status != "Discharging" ? "charging" : EWW_BATTERY.BAT1.capacity < battery_critical_threshold ? "critical" : EWW_BATTERY.BAT1.capacity < battery_warning_threshold ? "warning" : ""}"
+              :value {EWW_BATTERY.BAT1.capacity}
+              )
+            (box
+              :valign "center"
+              :space-evenly false
+              :class "battery-text"
+              (box
+                :orientation "v"
+                :space-evenly false
+                (label
+                  :halign "start"
+                  :class "battery-title"
+                  :text "Battery"
+                  )
+                (label
+                  :halign "start"
+                  :class "battery-percentage"
+                  :text "${EWW_BATTERY.BAT1.capacity}%"
+                  )
+                )
+              (label
+                :class "battery-icon ${EWW_BATTERY.BAT1.status != "Discharging" ? "charging" : ""}"
+                :halign "end"
+                :text {EWW_BATTERY.BAT1.status != "Discharging" ? "󰂄" : EWW_BATTERY.BAT1.capacity < battery_critical_threshold ? "󰂃" : "󰁹" }
+                )
+              )
+            )
+          )
+        (button
+          :onclick "kitty --hold curl wttr.in & eww update reveal_control=false"
+          :timeout "1s"
+          :class "weather"
+          (box
+            :orientation "v"
+            :space-evenly false
+            (label
+              :class "weather-desc"
+              :halign "start"
+              :text weather_condition
+              )
+            (label
+              :class "weather-temp"
+              :halign "start"
+              :text temperature
+              )
+            (label
+              :class "weather-icon"
+              :halign "end"
+              :text weather_icon
+              )
+            )
+          )
+        )
+)
+)
+)

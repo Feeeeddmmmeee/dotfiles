@@ -1,0 +1,148 @@
+@use "./catppuccin.scss" as *;
+
+$font: Hack Nerd Font;
+
+scale trough {
+	background-color: $surface2;
+	border-radius: 5px;
+	min-height: 10px;
+	min-width: 80px;
+	margin: 0px 5px;
+}
+
+tooltip * {
+	margin: 4px;
+}
+
+tooltip {
+	background-color: $base;
+	color: $text;
+	font-family: $font;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.hbar {
+	background-color: rgba($base, 0.8);
+	padding: 5px 25px 5px 25px;
+	border-radius: 15px;
+}
+
+.arch_icon {
+	color: $blue;
+	font-size: 23;
+}
+
+.workspaces-widget {
+	background-color: $surface0;
+	border-radius: 8px;
+	padding: 0px 5px;
+}
+
+.workspace-entry {
+	font-size: 15;
+	padding: 0px 10px;
+
+	&.current.empty,
+	&.current.occupied {
+		color: $text;
+	}
+
+	&.occupied {
+		color: $surface2;
+	}
+
+	&.empty {
+		color: $surface1;
+	}
+}
+
+.clock {
+	font-family: $font;
+	font-weight: bold;
+	color: $text;
+}
+
+.container {
+	background-color: $surface0;
+	border-radius: 8px;
+	padding: 0px 10px;
+}
+
+.wifi_icon {
+	color: $blue;
+	padding: 0px 6px;
+	font-size: 20;
+}
+
+.wifi_text {
+	font-family: $font;
+	color: $text;
+	margin: 0px 5px;
+	font-weight: bold;
+}
+
+@keyframes critical {
+	0% { color: $red; }
+	50% { color: red; }
+	100% { color:$red; }
+}
+
+.battery {
+	font-size: 20;
+	color: $green;
+
+	&.warning {
+		color: $yellow;
+	}
+
+	&.critical {
+		animation-name: critical;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+	}
+
+	&.charging {
+		color: $green;
+	}
+}
+
+.battery_text {
+	font-family: $font;
+	color: $text;
+	margin: 0px 5px;
+	font-weight: bold;
+}
+
+.brightness_icon {
+	color: $yellow;
+	font-size: 20;
+	padding-right: 6px;
+}
+
+.brightness_bar trough highlight {
+	background-color: $yellow;
+	border-radius: 5px;
+}
+
+.volume_icon {
+	color: $green;
+	font-size: 22;
+	padding-right: 4px;
+}
+
+.volume_bar trough highlight {
+	background-color: $green;
+	border-radius: 5px;
+}
+
+.mic_icon {
+	color: $peach;
+	font-size: 20;
+}
+
+.power_icon {
+	color: $red;
+	padding-right: 6px;
+	font-size: 20;
+}

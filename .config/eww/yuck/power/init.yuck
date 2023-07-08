@@ -1,0 +1,15 @@
+(include "./yuck/power/layout.yuck")
+
+(defwindow power
+  :monitor 0
+  :geometry (geometry
+              :x "14px"
+              :y "14px"
+              :width "0px"
+              :height "0px"
+              :anchor "top left"
+              )
+  :stacking "fg"
+  :exclusive true
+  (power_layout)
+  )
