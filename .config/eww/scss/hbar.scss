@@ -97,9 +97,10 @@ tooltip {
 	}
 
 	&.critical {
-		animation-name: critical;
-		animation-duration: 1s;
-		animation-iteration-count: infinite;
+		color: $red;
+		// animation-name: critical;
+		// animation-duration: 1s;
+		// animation-iteration-count: infinite;
 	}
 
 	&.charging {
