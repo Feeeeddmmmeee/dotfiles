@@ -36,4 +36,3 @@ alias weather='curl wttr.in'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-export PATH=$PATH:/home/janek/.spicetify
