@@ -56,7 +56,7 @@
             )
           (overlay
             (progress
-              :class "battery-prog ${EWW_BATTERY.BAT1.status != "Discharging" ? "charging" : EWW_BATTERY.BAT1.capacity < battery_critical_threshold ? "critical" : EWW_BATTERY.BAT1.capacity < battery_warning_threshold ? "warning" : ""}"
+              :class "battery-prog ${EWW_BATTERY.BAT1.status != "Discharging" ? "charging" : EWW_BATTERY.BAT1.capacity < battery_critical_threshold ? "critical" : ""}"
               :value {EWW_BATTERY.BAT1.capacity}
               )
             (box

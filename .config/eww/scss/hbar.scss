@@ -92,10 +92,6 @@ tooltip {
 	font-size: 20;
 	color: $green;
 
-	&.warning {
-		color: $yellow;
-	}
-
 	&.critical {
 		color: $red;
 		// animation-name: critical;

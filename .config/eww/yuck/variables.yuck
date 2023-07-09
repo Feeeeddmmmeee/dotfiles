@@ -8,8 +8,7 @@
 (defpoll wifi_ssid :initial "Disconnected" :interval "5s" "~/.config/eww/scripts/wifi ssid")
 
 (defvar battery_visible false)
-(defvar battery_warning_threshold 20)
-(defvar battery_critical_threshold 10)
+(defvar battery_critical_threshold 15)
 (defpoll battery_left :interval "1m" "bash ~/.config/eww/scripts/battery-left")
 
 (defvar brightness_visible false)

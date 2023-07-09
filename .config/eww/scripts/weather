@@ -4,9 +4,10 @@ TIMEOUT=5
 
 if [ $1 == "icon" ] ; then
 	CONDITION=$(timeout $TIMEOUT curl -s wttr.in/\?format="%C" || echo "Error")
-	if [ $(echo "$CONDITION" | grep -i "sun") ] ; then OUTPUT="󰖨"
-	elif [ $(echo "$CONDITION" | grep -i "rain") ] ; then OUTPUT=""
-	elif [ $(echo "$CONDITION" | grep -i "partly") ] ; then OUTPUT=""
+	if [ ! -z "$(echo "$CONDITION" | grep -i "sun")" ] ; then OUTPUT="󰖨"
+	elif [ ! -z "$(echo "$CONDITION" | grep -i "rain")" ] ; then OUTPUT=""
+	elif [ ! -z "$(echo "$CONDITION" | grep -i "storm")" ] ; then OUTPUT=""
+	elif [ ! -z "$(echo "$CONDITION" | grep -i "partly")" ] ; then OUTPUT=""
 	else OUTPUT=""
 	fi
 

@@ -57,7 +57,7 @@
     :onhoverlost "eww update battery_visible=false"
     (box
       :space-evenly false
-      (label :text "${EWW_BATTERY.BAT1.status == "Discharging" ? "" : "󱐋"}${EWW_BATTERY.BAT1.capacity < 15 ? "󰁺" : EWW_BATTERY.BAT1.capacity < 25 ? "󰁻" : EWW_BATTERY.BAT1.capacity < 35 ? "󰁼" : EWW_BATTERY.BAT1.capacity < 45 ? "󰁽" : EWW_BATTERY.BAT1.capacity < 55 ? "󰁾" : EWW_BATTERY.BAT1.capacity < 65 ? "󰁿" : EWW_BATTERY.BAT1.capacity < 75 ? "󰂀" : EWW_BATTERY.BAT1.capacity < 85 ? "󰂁" : EWW_BATTERY.BAT1.capacity < 95 ? "󰂂" : "󰁹"}" :class "battery ${EWW_BATTERY.BAT1.state == "Charging" ? "charging" : EWW_BATTERY.BAT1.capacity < battery_critical_threshold ? "critical" : EWW_BATTERY.BAT1.capacity < battery_warning_threshold ? "warning" : ""}")
+      (label :text "${EWW_BATTERY.BAT1.status == "Discharging" ? "" : "󱐋"}${EWW_BATTERY.BAT1.capacity < 15 ? "󰁺" : EWW_BATTERY.BAT1.capacity < 25 ? "󰁻" : EWW_BATTERY.BAT1.capacity < 35 ? "󰁼" : EWW_BATTERY.BAT1.capacity < 45 ? "󰁽" : EWW_BATTERY.BAT1.capacity < 55 ? "󰁾" : EWW_BATTERY.BAT1.capacity < 65 ? "󰁿" : EWW_BATTERY.BAT1.capacity < 75 ? "󰂀" : EWW_BATTERY.BAT1.capacity < 85 ? "󰂁" : EWW_BATTERY.BAT1.capacity < 95 ? "󰂂" : "󰁹"}" :class "battery ${EWW_BATTERY.BAT1.state == "Charging" ? "charging" : EWW_BATTERY.BAT1.capacity < battery_critical_threshold ? "critical" : ""}")
       (revealer
         :transition "slideright"
         :reveal battery_visible
