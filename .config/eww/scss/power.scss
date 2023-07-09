@@ -1,13 +1,14 @@
-@use "./catppuccin.scss" as *;
-
-$font: Hack Nerd Font;
+@use "./include.scss" as *;
 
 .profile-widget {
 	background-color: rgba($base, 0.9);
 	padding: 20px 20px 20px 20px;
 	border-radius: 15px 15px 0px 0px;
 	border-bottom: 5 solid $surface0;
-	
+}
+
+.buttons {
+	margin-left: 2em;
 }
 
 .avatar {
@@ -23,8 +24,7 @@ $font: Hack Nerd Font;
 	font-size: 19px;
 	font-weight: bold;
 	color: $text;
-	margin: 0em 0em 0em .8em;
-	margin-top: .6em;
+	margin: .6em 0em 0em .8em;
 }
 
 .uptime {
@@ -35,9 +35,6 @@ $font: Hack Nerd Font;
 	margin: .25em 0em 0em 1em;
 }
 
-.buttons {
-	margin-left: 3em;
-}
 
 .button {
 	color: $text;
@@ -64,8 +61,7 @@ $font: Hack Nerd Font;
 
 .second-row {
 	background-color: rgba($base, 0.9);
-	padding: 20px 20px 20px 20px;
-	border-radius: 0px 0px 15px 15px;
+	padding: 20px 20px 0px 20px;
 
 }
 
@@ -116,7 +112,7 @@ $font: Hack Nerd Font;
 
 .weather-icon {
 	font-size: 50px;
-	margin-right: .5em;
+	margin-right: .6em;
 	margin-top: .5em;
 }
 
@@ -171,5 +167,87 @@ $font: Hack Nerd Font;
 
 .battery-icon {
 	font-size: 30px;
-	margin-left: 2.9em;
+	padding-right: 1em;
+}
+
+.apps {
+	background-color: rgba($base, 0.9);
+	padding: 0 20px 0 20px;
+}
+
+.appbutton {
+	color: $text;
+	background-color: $surface0;
+	border-radius: 10px;
+	font-size: 40px;
+	padding: 20px;
+	margin: 7.5px;
+	
+	&.nvim {
+		padding-right: 25px;
+		padding-top: 22px;
+		// color: $green
+	}
+
+	&.reddit {
+		padding-right: 35px;
+		padding-bottom: 25px;
+		// color: $flamingo;
+	}
+
+	&.github {
+		padding-right: 26px;
+		color: $text;
+	}
+
+	&.discord {
+		padding-right: 25px;
+		// color: $lavender;
+	}
+
+	&:hover {
+		background-color: $surface1;
+	}
+}
+
+.stats {
+	background-color: rgba($base, 0.9);
+	padding: 0 20px 0 20px;
+
+	.progress {
+		color: $text;
+		background-color: $surface0;
+		border-radius: 10px;
+		padding: 20px;
+		margin: 7.5px;
+
+		circular-progress {
+			background-color: $surface1;
+			color: $blue;
+
+			&.cpu {
+				label {
+					margin-right: 14px;
+				}
+			}
+
+			&.ram {
+				label {
+					margin-right: 4px;
+				}
+			}
+
+		}
+	}
+
+	.icon {
+		font-size: 40px;
+		padding: 1.75em;
+	}
+}
+
+.bottom {
+	background-color: rgba($base, 0.9);
+	padding-top: 20px;
+	border-radius: 0 0 15px 15px;
 }

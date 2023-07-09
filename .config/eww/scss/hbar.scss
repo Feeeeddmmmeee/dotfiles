@@ -1,6 +1,4 @@
-@use "./catppuccin.scss" as *;
-
-$font: Hack Nerd Font;
+@use "./include.scss" as *;
 
 scale trough {
 	background-color: $surface2;

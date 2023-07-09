@@ -3,23 +3,29 @@
     :transition "slidedown"
     :reveal reveal_control
     (box
+      :class "control-center"
       :orientation "v"
       :space-evenly false
-      :class "control-center"
       (box 
         :class "profile-widget"
         :orientation "h"
-        :halign "start"
-        :space-evenly false
-        (box :class "avatar")
-        (box 
-          :orientation "v" 
+        :spacing -65
+        (box
+          :class "user-profile"
+          :halign "start"
+          :orientation "h"
           :space-evenly false
-          (label :class "user-hostname" :halign "start" :text hostname)
-          (label :class "uptime" :halign "start" :text uptime)
+          (box :class "avatar")
+          (box 
+            :orientation "v" 
+            :space-evenly false
+            (label :class "user-hostname" :halign "start" :text hostname)
+            (label :class "uptime" :halign "start" :text uptime)
+            )
           )
         (box
           :class "buttons"
+          :halign "end"
           :orientation "h"
           :space-evenly false
           (button
@@ -61,11 +67,13 @@
               )
             (box
               :valign "center"
-              :space-evenly false
+              :space-evenly true
               :class "battery-text"
+              :orientation "h"
               (box
                 :orientation "v"
-                :space-evenly false
+                :space-evenly true
+                :halign "start"
                 (label
                   :halign "start"
                   :class "battery-title"
@@ -80,15 +88,16 @@
               (label
                 :class "battery-icon ${EWW_BATTERY.BAT1.status != "Discharging" ? "charging" : ""}"
                 :halign "end"
+                :valign "end"
                 :text {EWW_BATTERY.BAT1.status != "Discharging" ? "󰂄" : EWW_BATTERY.BAT1.capacity < battery_critical_threshold ? "󰂃" : "󰁹" }
                 )
               )
             )
           )
         (button
+          :class "weather"
           :onclick "kitty --hold curl wttr.in & eww update reveal_control=false"
           :timeout "1s"
-          :class "weather"
           (box
             :orientation "v"
             :space-evenly false
@@ -110,6 +119,82 @@
             )
           )
         )
+(revealer
+  :transition "slidedown"
+  :reveal true ;;reveal_apps
+  (box
+    :orientation "v"
+    :space-evenly false
+    (apps)
+    (stats)
+    )
+  )
+(box
+  :class "bottom"
+  )
 )
 )
 )
+
+(defwidget apps []
+  (box 
+    :class "apps"
+    :orientation "h"
+    :valign "center"
+    (button 
+      :class "appbutton nvim"
+      :onclick "kitty nvim & eww update reveal_control=false"
+      ""
+      )
+    (button 
+      :class "appbutton github"
+      :onclick "firefox www.github.com & eww update reveal_control=false"
+      ""
+      )
+    (button 
+      :class "appbutton reddit"
+      :onclick "firefox www.reddit.com/r/unixporn & eww update reveal_control=false"
+      ""
+      )
+    (button 
+      :class "appbutton discord"
+      :onclick "discord & eww update reveal_control=false"
+      "󰙯"
+      )
+    )
+  )
+
+(defwidget system_progress [data icon css]
+  (box
+    :class "progress"
+    (circular-progress
+      :class css
+      :value data
+      :thickness 15
+      (overlay
+        :valign "center"
+        (label
+          :class "icon"
+          :text icon
+          )
+        )
+      )
+    )
+  )
+
+(defwidget stats []
+  (box
+    :orientation "h"
+    :class "stats"
+    (system_progress
+      :css "cpu"
+      :data {EWW_CPU['avg']}
+      :icon ""
+      )
+    (system_progress
+      :css "ram"
+      :data {EWW_RAM['used_mem_perc']}
+      :icon "󰒋"
+      )
+    )
+  )
