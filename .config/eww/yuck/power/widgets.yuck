@@ -96,7 +96,7 @@
           )
         (button
           :class "weather"
-          :onclick "kitty --hold curl wttr.in & eww update reveal_control=false"
+          :onclick "kitty --class=floating --hold curl wttr.in & eww update reveal_control=false"
           :timeout "1s"
           (box
             :orientation "v"
