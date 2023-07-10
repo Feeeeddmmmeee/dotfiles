@@ -129,22 +129,6 @@
 			padding: 40px 0 40px 0;
 		}
 	}
-
-	// &.critical {
-	// 	trough {
-	// 		background-color: $surface0;
-	// 		border-radius: 10px;
-	// 		margin: .5em .5em;
-	// 		padding: 40px 0 40px 0;
-	//
-	// 		progress {
-	// 			background-color: rgba(darken($red, 10%), .8);
-	// 			border-radius: 10px;
-	// 			padding: 40px 0 40px 0;
-	// 		}
-	// 	}
-	//
-	// }
 }
 
 .battery-text {
@@ -166,8 +150,9 @@
 }
 
 .battery-icon {
-	font-size: 30px;
+	font-size: 35px;
 	padding-right: 1em;
+	padding-bottom: .1em;
 }
 
 .apps {

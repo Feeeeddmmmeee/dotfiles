@@ -143,7 +143,7 @@
     :valign "center"
     (button 
       :class "appbutton nvim"
-      :onclick "kitty nvim & eww update reveal_control=false"
+      :onclick "kitty bash ~/.config/eww/scripts/nvim & eww update reveal_control=false"
       ""
       )
     (button 
