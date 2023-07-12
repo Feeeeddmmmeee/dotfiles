@@ -34,5 +34,8 @@ alias pls='please'
 alias kot='cat'
 alias weather='curl wttr.in'
 
+alias token='cat ~/.token | clipboard'
+alias logout='pkill -KILL -u $(whoami)'
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
