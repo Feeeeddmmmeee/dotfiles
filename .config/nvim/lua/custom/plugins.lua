@@ -43,7 +43,11 @@ return require('packer').startup(function(use)
 	use "sitiom/nvim-numbertoggle"
 
 	-- Smooth scrolling
-	use 'karb94/neoscroll.nvim'
+	-- use 'karb94/neoscroll.nvim'
+	use {
+		'declancm/cinnamon.nvim',
+		config = function() require('cinnamon').setup() end
+	}
 
 	-- Easier comments
 	use {
@@ -71,6 +75,7 @@ return require('packer').startup(function(use)
 
 	-- Yuck syntax highlighting
 	use 'elkowar/yuck.vim'
+	use 'gpanders/nvim-parinfer'
 
 	-- LSP
 	use {
