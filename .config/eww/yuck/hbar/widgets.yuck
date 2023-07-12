@@ -3,10 +3,8 @@
     :class "arch_icon"
     :valign "center"
     :onclick "~/.local/bin/toggle_menu"
-    "󰣇"
-    )
-  )
-
+    "󰣇"))
+    
 (defwidget workspaces []
   (box 
     :class "workspaces-widget"
@@ -17,18 +15,11 @@
            :onclick "hyprctl dispatch workspace ${workspace.id}"
            (box 
              :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
-             (label :text "")
-             )
-           )
-         )
-    )
-  )
+             (label :text ""))))))
 
 (defwidget clock []
   (label :class "clock"
-         :text time
-         )
-  )
+         :text time))
 
 (defwidget wifi []
   (eventbox 
@@ -44,13 +35,8 @@
         (button
           :class "wifi_text"
           :onclick "togglewifi"
-          wifi_ssid
-          )
-        )
-      )
-    )
-  )
-
+          wifi_ssid)))))
+          
 (defwidget battery []
   (eventbox
     :onhover "eww update battery_visible=true"
@@ -64,12 +50,7 @@
         :duration "200ms"
         (label 
           :class "battery_text"
-          :text "${EWW_BATTERY.BAT1.capacity}% (${battery_left})"
-          )
-        )
-      )
-    )
-  )
+          :text "${EWW_BATTERY.BAT1.capacity}% (${battery_left})")))))
 
 (defwidget brightness []
   (eventbox 
@@ -89,12 +70,7 @@
           :max 100
           :orientation "h"
           :onchange "brightnessctl set {}%"
-          :tooltip "${current_brightness}%"
-          )
-        )
-      )
-    )
-  )
+          :tooltip "${current_brightness}%")))))
 
 (defwidget volume []
   (eventbox 
@@ -114,21 +90,14 @@
           :max 100
           :orientation "h"
           :onchange "pamixer --set-volume {}"
-          :tooltip "${current_volume}%"
-          )
-        )
-      )
-    )
-  )
+          :tooltip "${current_volume}%")))))
 
 (defwidget mic []
   (button 
     :class "mic_icon"
     :onclick "pamixer --source 1 --toggle-mute"
-    mic_icon
-    )
-  )
-
+    mic_icon))
+    
 (defwidget container []
   (box 
     :class "container"
@@ -138,14 +107,10 @@
     (battery)
     (brightness)
     (volume)
-    (mic)
-    )
-  )
-
+    (mic)))
+    
 (defwidget power []
   (button 
     :class "power_icon"
     :onclick "echo placeholder command"
-    ""
-    )
-  )
+    ""))

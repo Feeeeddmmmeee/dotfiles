@@ -1,8 +1,0 @@
-(include "./yuck/power/widgets.yuck")
-
-(defwidget power_layout []
-  (box
-    :class "power"
-    (control_center)
-    )
-  )

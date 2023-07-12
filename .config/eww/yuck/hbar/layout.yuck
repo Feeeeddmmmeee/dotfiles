@@ -6,18 +6,14 @@
     :halign "start"
     :spacing 25
     (arch_icon)
-    (workspaces)
-    )
-  )
+    (workspaces)))
 
 (defwidget hbar_center []
   (box
     :space-evenly false
     :halign "center"
     :spacing 25
-    (clock)
-    )
-  )
+    (clock)))
 
 (defwidget hbar_right []
   (box
@@ -25,15 +21,11 @@
     :halign "end"
     :spacing 25
     (container)
-    (power)
-    )
-  )
-
+    (power)))
+    
 (defwidget hbar_layout []
   (box
     :class "hbar"
     (hbar_left)
     (hbar_center)
-    (hbar_right)
-    )
-  )
+    (hbar_right)))

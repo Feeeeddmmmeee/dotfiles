@@ -8,9 +8,9 @@
               :y "14px"
               :width "${1920 - 2*14}px"
               :height "4%"
-              :anchor "top center"
-              )
+              :anchor "top center")
+              
   :stacking "fg"
   :exclusive true
-  (hbar_layout)
-  )
+  (hbar_layout))
+  
