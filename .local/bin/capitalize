@@ -1,0 +1,5 @@
+#!/bin/bash
+
+WORD=$1
+WORD="${WORD^}"
+echo $WORD

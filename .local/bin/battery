@@ -1,0 +1,4 @@
+#!/bin/bash
+
+upower -i $(upower -e | grep BAT0)
+upower -i $(upower -e | grep BAT1)
