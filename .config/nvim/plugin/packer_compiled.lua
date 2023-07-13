@@ -85,6 +85,11 @@ _G.packer_plugins = {
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["baleia.nvim"] = {
+    loaded = true,
+    path = "/home/janek/.local/share/nvim/site/pack/packer/start/baleia.nvim",
+    url = "https://github.com/m00qek/baleia.nvim"
+  },
   ["barbecue.nvim"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/barbecue.nvim",
@@ -136,6 +141,11 @@ _G.packer_plugins = {
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["image.nvim"] = {
+    loaded = true,
+    path = "/home/janek/.local/share/nvim/site/pack/packer/start/image.nvim",
+    url = "https://github.com/samodostal/image.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -180,11 +190,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-numbertoggle",
     url = "https://github.com/sitiom/nvim-numbertoggle"
-  },
-  ["nvim-parinfer"] = {
-    loaded = true,
-    path = "/home/janek/.local/share/nvim/site/pack/packer/start/nvim-parinfer",
-    url = "https://github.com/gpanders/nvim-parinfer"
   },
   ["nvim-treesitter"] = {
     loaded = true,

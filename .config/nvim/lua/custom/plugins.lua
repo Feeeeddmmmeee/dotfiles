@@ -66,16 +66,30 @@ return require('packer').startup(function(use)
 	-- Diagnostics
 	use 'folke/trouble.nvim'
 
+	-- Yuck syntax highlighting
+	-- use 'gpanders/nvim-parinfer'
+	use 'elkowar/yuck.vim'
+
+	-- Previewing images as ASCII
+	use {
+		'samodostal/image.nvim',
+		requires = {
+			'nvim-lua/plenary.nvim'
+		}
+	}
+
 	-- LSP based context bar
 	use {
 		'utilyre/barbecue.nvim',
 		tag = '*',
-		requires = { 'SmiteshP/nvim-navic' }
+		requires = {
+			'SmiteshP/nvim-navic',
+			{
+				'm00qek/baleia.nvim',
+				tag = 'v1.3.0'
+			}
+		}
 	}
-
-	-- Yuck syntax highlighting
-	use 'elkowar/yuck.vim'
-	use 'gpanders/nvim-parinfer'
 
 	-- LSP
 	use {
