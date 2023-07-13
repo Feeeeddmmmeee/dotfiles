@@ -68,6 +68,7 @@
       (label
         :class "weather-desc"
         :halign "start"
+        :limit-width 10
         :text weather_condition)
       (label
         :class "weather-temp"
