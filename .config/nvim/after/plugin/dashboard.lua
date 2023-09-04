@@ -88,11 +88,11 @@ require('dashboard').setup({
 			{
 				icon = ' ',
 				icon_hl = 'Title',
-				desc = 'Config           ',
+				desc = 'Plugins           ',
 				desc_hl = 'String',
-				key = 'c',
+				key = 'p',
 				key_hl = 'Number',
-				action = 'edit ~/.config/nvim/init.lua'
+				action = 'edit ~/.config/nvim/lua/custom/plugins.lua'
 			},
 			{
 				icon = '󰗼 ',

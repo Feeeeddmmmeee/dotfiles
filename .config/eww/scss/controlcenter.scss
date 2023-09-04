@@ -1,7 +1,7 @@
 @use "./include.scss" as *;
 
 .profile-widget {
-	background-color: rgba($base, 0.9);
+	background-color: rgba($base, 1);
 	padding: 20px 20px 20px 20px;
 	border-radius: 15px 15px 0px 0px;
 	border-bottom: 5 solid $surface0;
@@ -60,7 +60,7 @@
 }
 
 .second-row {
-	background-color: rgba($base, 0.9);
+	background-color: rgba($base, 1);
 	padding: 20px 20px 0px 20px;
 
 }
@@ -156,7 +156,7 @@
 }
 
 .apps {
-	background-color: rgba($base, 0.9);
+	background-color: rgba($base, 1);
 	padding: 0 20px 0 20px;
 }
 
@@ -196,7 +196,7 @@
 }
 
 .stats {
-	background-color: rgba($base, 0.9);
+	background-color: rgba($base, 1);
 	padding: 0 20px 0 20px;
 
 	.progress {
@@ -232,7 +232,7 @@
 }
 
 .bottom {
-	background-color: rgba($base, 0.9);
+	background-color: rgba($base, 1);
 	padding-top: 20px;
 	border-radius: 0 0 15px 15px;
 }

@@ -2,3 +2,4 @@
 
 (include "./yuck/hbar/init.yuck")
 (include "./yuck/controlcenter/init.yuck")
+(include "./yuck/powermenu/init.yuck")

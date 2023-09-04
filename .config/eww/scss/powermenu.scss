@@ -1,0 +1,25 @@
+@use "./include.scss" as *;
+
+// .powermenu {
+// 	background-color: rgba($mantle, .5);
+// }
+
+.powerbuttons {
+	background-color: rgba($base, .9);
+	padding: 20px;
+	border-radius: 10px;
+
+}
+
+.powerbutton {
+	color: $text;
+	background-color: $surface0;
+	border-radius: 10px;
+	padding: 20px;
+	font-size: 40px;
+	margin: 7.5px;
+
+	&:hover {
+		background-color: $surface1;
+	}
+}

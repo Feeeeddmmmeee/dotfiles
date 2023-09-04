@@ -78,6 +78,9 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- Simple markdown preview
+	use 'ellisonleao/glow.nvim'
+
 	-- LSP based context bar
 	use {
 		'utilyre/barbecue.nvim',

@@ -39,3 +39,17 @@ alias logout='pkill -KILL -u $(whoami)'
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+
+# Temporary aliases
+prepend-line-count() {
+	<<< $(wc -l $1 | awk '{print $1}') < $1 | sponge $1
+}
+
+test-accuracy() {
+	CORRECT=$(./lang < $1 | grep -c $2)
+	ALL=$(wc -l $1 | awk '{print $1}')
+	echo "$CORRECT/$ALL correct ($((100 * $CORRECT / $ALL))%)"
+}
+
+alias rp="rm -f patterns.txt; c pattern_generator.cpp; cat patterns.txt|clipboard"
+alias sl="./slc unknown.sl unknown; ./unknown"    

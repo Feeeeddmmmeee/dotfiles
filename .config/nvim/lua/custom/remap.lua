@@ -11,6 +11,13 @@ local function map(mode, lhs, rhs, opts)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+-- Select all
+vim.keymap.set("n", "<C-a>", "ggVG")
+vim.keymap.set("i", "<C-a>", "<ESC>ggVG")
+
+-- Markdown preview
+vim.keymap.set("n", "<leader>g", ":Glow<CR>")
+
 -- Terminal
 map("n", "<C-Enter>", ":ToggleTerm<CR><C-\\><C-n>i")
 map("i", "<C-Enter>", "<ESC>:ToggleTerm<CR><C-\\><C-n>i")
