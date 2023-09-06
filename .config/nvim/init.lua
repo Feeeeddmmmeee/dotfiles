@@ -1,1 +1,2 @@
-require("custom")
+require("config.core")
+require("config.lazy")

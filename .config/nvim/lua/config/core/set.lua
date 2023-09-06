@@ -11,3 +11,5 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
+
+vim.o.undofile = true
