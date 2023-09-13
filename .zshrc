@@ -33,6 +33,7 @@ alias icat='kitty +kitten icat'
 alias pls='please'
 alias kot='cat'
 alias weather='curl wttr.in'
+alias sdn='shutdown now'
 
 alias token='cat ~/.token | clipboard'
 alias logout='pkill -KILL -u $(whoami)'

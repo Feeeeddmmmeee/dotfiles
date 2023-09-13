@@ -60,7 +60,7 @@
 (defwidget weather-widget []
   (button
     :class "weather"
-    :onclick "kitty --class=floating --hold curl wttr.in & eww update reveal_control=false"
+    :onclick "kitty --class=floating --detach --hold curl wttr.in; sh - c \"read -p \"Press any key to continue... \" -n1 -s\" & eww update reveal_control=false"
     :timeout "1s"
     (box
       :orientation "v"
