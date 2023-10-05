@@ -20,6 +20,7 @@ please() {
 }
 
 alias :q='exit'
+alias :wq='exit'
 alias la='ls -A'
 alias ll='ls -lA'
 alias ..='cd ..'
@@ -33,9 +34,10 @@ alias icat='kitty +kitten icat'
 alias pls='please'
 alias kot='cat'
 alias weather='curl wttr.in'
-alias sdn='shutdown now'
 
 alias token='cat ~/.token | clipboard'
 alias logout='pkill -KILL -u $(whoami)'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias tmux-detach-all='tmux ls | cut -d ':' -f 1 | xargs -I {} tmux detach -s {}'
+alias sdn='shutdown now'
