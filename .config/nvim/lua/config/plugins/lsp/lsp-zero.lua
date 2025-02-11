@@ -21,6 +21,11 @@ return {
 			}
 		}
 
+		lspconfig.clangd.setup {}
+		lspconfig.ts_ls.setup {}
+		lspconfig.svelte.setup {}
+		lspconfig.jsonls.setup {}
+
 		local map = function(mode, a, b, buf)
 			vim.keymap.set(mode, a, b, { noremap = true, silent = true, buffer = buf })
 		end

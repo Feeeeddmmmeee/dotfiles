@@ -1,5 +1,5 @@
-(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
-(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+;; (deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+;; (deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
 
 (defpoll time :interval "5s" `date "+%d %h, %H:%M"`)
 
@@ -26,7 +26,7 @@
 (defpoll weekday :initial "Weekday" :interval "1m" "date +'%A'")
 (defpoll control-date :initial "xx Month, xxxx" :interval "1m" "date +'%d %B, %Y'")
 
-(defvar reveal_control false)
+(defvar reveal_control true)
 
 (defpoll weather_condition :initial "Waiting..." :interval "10s" "bash ~/.config/eww/scripts/weather condition")
 (defpoll weather_icon :initial "" :interval "10s" "bash ~/.config/eww/scripts/weather icon")

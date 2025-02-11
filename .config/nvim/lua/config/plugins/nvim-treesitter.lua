@@ -5,7 +5,7 @@ return {
 		local configs = require("nvim-treesitter.configs")
 
 		configs.setup({
-			ensure_installed = { "c", "cpp", "vim" },
+			ensure_installed = { "c", "cpp", "vim", "scss" },
 			sync_install = false,
 			auto_install = true,
 			highlight = { 

@@ -18,10 +18,12 @@ return {
 		})
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"pyright",
 				"clangd",
 				"lua_ls",
 				"cssls",
+				"svelte",
+				"ts_ls",
+				"jsonls"
 			},
 			automatic_installation = true,
 		})

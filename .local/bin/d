@@ -1,0 +1,3 @@
+#!/bin/bash
+OUTPUT=${2:-${1%.cpp}}
+g++ -DDEBUG -o $OUTPUT $1 && ./$OUTPUT

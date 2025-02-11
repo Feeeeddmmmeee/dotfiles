@@ -6,7 +6,8 @@
     :halign "start"
     :spacing 25
     (arch_icon)
-    (workspaces)))
+    ;; (workspaces)
+	))
 
 (defwidget hbar_center []
   (box

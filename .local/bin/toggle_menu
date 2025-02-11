@@ -1,6 +1,9 @@
 #!/bin/bash
-if [ ! -z "$(eww state | grep "reveal_control: false")" ] ; then
+if [ ! -z "$(eww state | grep "reveal_control: false")" ] || [ -z "$(eww windows | grep "*controlcenter")" ]; then
+	if [ -z "$(eww windows | grep "*controlcenter")" ]; then
+		eww open controlcenter
+	fi
 	eww update reveal_control=true
 else
-	eww update reveal_control=false
+	eww close controlcenter
 fi

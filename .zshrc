@@ -10,7 +10,7 @@ PROMPT="%{$fg[white]%}[%n@%m] %(?:%{$fg_bold[green]%} :%{$fg[red]%} )%(?:%
 # PROMPT="%(?:%{$fg_bold[green]%} :%{$fg_bold[red]%} )%{$fg[cyan]%}%~%{$reset_color%} "
 
 # Exports
-export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:~/.local/bin/:~/.cargo/bin/
 
 # Aliases
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
@@ -34,10 +34,17 @@ alias icat='kitty +kitten icat'
 alias pls='please'
 alias kot='cat'
 alias weather='curl wttr.in'
+alias neofetch="fastfetch"
 
 alias token='cat ~/.token | clipboard'
+alias autom='cat ~/.token2 | clipboard'
 alias logout='pkill -KILL -u $(whoami)'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias tmux-detach-all='tmux ls | cut -d ':' -f 1 | xargs -I {} tmux detach -s {}'
 alias sdn='shutdown now'
+
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m"
+alias gl="git log --branches --not --remotes"
