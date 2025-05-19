@@ -15,8 +15,10 @@ alias la="ls -A"
 alias ll="ls -lA"
 alias ..="cd .."
 alias sdn="shutdown now"
-alias neofetch="fastfetch"
 alias icat="kitty +kitten icat"
+
+alias onefetch="onefetch --include-hidden"
+alias neofetch="fastfetch"
 
 alias rm="rm -i"
 alias mv="mv -i"
