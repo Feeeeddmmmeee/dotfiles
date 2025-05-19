@@ -6,6 +6,9 @@ pls() {
 	sudo $(fc -ln -1)
 }
 
+# Path
+export PATH=$PATH:~/.local/bin/
+
 # Aliases
 alias gs="git status"
 alias ga="git add"
