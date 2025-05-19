@@ -1,7 +1,8 @@
 ## :heart: About
 - **Distro:** Arch Linux (btw)
 - **Compositor/WM:** Hyprland
-- **Terminal:** zsh
+- **Terminal:** Kitty
+- **Shell:** Zsh
 
 ## :desktop_computer: Screenshots
 
