@@ -1,2 +1,2 @@
 #!/bin/bash
-swww img --transition-type wipe --transition-angle 30 --transition-step 90 $1
+swww img --transition-type wipe --transition-angle 30 --transition-step 90 $1 && wal -i $1

@@ -14,6 +14,8 @@ alias gc="git commit -m"
 alias la="ls -A"
 alias ll="ls -lA"
 alias ..="cd .."
+alias :q="exit"
+alias :wq="exit"
 alias sdn="shutdown now"
 alias icat="kitty +kitten icat"
 
@@ -25,3 +27,7 @@ alias mv="mv -i"
 
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+
+# Pywal
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
