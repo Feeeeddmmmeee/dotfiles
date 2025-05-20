@@ -1,4 +1,3 @@
 #!/bin/bash
 WALLPAPER=$1
-wal -i $WALLPAPER -n && swww img --transition-type wipe --transition-angle 30 --transition-step 90 $WALLPAPER
-pywalfox update
+wal -i $WALLPAPER -n && swww img --transition-type wipe --transition-angle 30 --transition-step 90 $WALLPAPER && pywalfox update
