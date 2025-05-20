@@ -3,6 +3,7 @@
 - **Compositor/WM:** Hyprland
 - **Terminal:** Kitty
 - **Shell:** Zsh
+- **Editor:** Neovim
 
 ## :desktop_computer: Screenshots
 Coming soon :3
