@@ -12,6 +12,7 @@ export PATH=$PATH:~/.local/bin/
 # Aliases
 alias gs="git status"
 alias ga="git add"
+alias gl="git log"
 alias gc="git commit -m"
 alias gpo="git push origin"
 
