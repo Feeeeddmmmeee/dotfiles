@@ -92,13 +92,16 @@ if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 	install_pkgs stow
 	export GUM_FILE_FILE=0
 	echo "Choose where you want to put the dotfiles folder:"
-	PATH=$(gum file --directory --all /home)
-	pwd
+	CHOSEN=$(gum file --directory --all /home)
 	cd ..
-	pwd
-	/bin/mv -i dotfiles/ $PATH
+
+	if [[ "$CHOSEN" != "$(pwd)" ]]
+		mv -i dotfiles/ $PATH
+	fi
+
 	echo "=> Successfully moved dotfiles to $PATH..."
 	cd "$PATH/dotfiles"
+	pwd
 	./syncdots
 else
 	mv -i ./* ./.* $DEST
