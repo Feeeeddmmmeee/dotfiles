@@ -30,8 +30,14 @@ install_helper()
 	cd $1
 	gum spin --title="Building... " -- makepkg --noconfirm -si
 	cd ..
-	rm -rf ./yay
-	echo "=> Successfully installed $1"
+	rm -rf "./$1"
+
+	if command -v $1 &> /dev/null; then
+		echo "=> Successfully installed $1"
+		pkgmgr=$1
+	else
+		echo "[ ERROR ] Failed to install $1..."
+	fi
 }
 
 # Installation
@@ -45,13 +51,9 @@ echo "Choose your AUR helper:"
 OPTIONS=$(choose_one "Yay" "Paru" "None")
 case $OPTIONS in
 	Yay)
-		install_helper yay
-		pkgmgr=yay
-	;;
+		install_helper yay ;;
 	Paru)
-		install_helper paru
-		pkgmgr=paru
-	;;
+		install_helper paru ;;
 	*)
 		echo "=> Continuing without an AUR helper..."
 esac
@@ -65,7 +67,7 @@ esac
 # python-pywal16
 # swww
 
-# zen-browser/firefox
+# zen-browser-bin/firefox
 
 # pywal
 # python-pywalfox
