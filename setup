@@ -101,7 +101,7 @@ if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 		mv -i dotfiles/ $CHOSEN
 	fi
 
-	echo "=> Successfully moved dotfiles to $PATH..."
+	echo "=> Successfully moved dotfiles to $CHOSEN..."
 	cd "$CHOSEN/dotfiles"
 	./syncdots
 else
