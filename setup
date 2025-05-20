@@ -95,13 +95,12 @@ if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 	CHOSEN=$(gum file --directory --all /home)
 	cd ..
 
-	if [[ "$CHOSEN" != "$(pwd)" ]]
-		mv -i dotfiles/ $PATH
+	if [[ "$CHOSEN" != "$(pwd)" ]]; then
+		mv -i dotfiles/ $CHOSEN
 	fi
 
 	echo "=> Successfully moved dotfiles to $PATH..."
-	cd "$PATH/dotfiles"
-	pwd
+	cd "$CHOSEN/dotfiles"
 	./syncdots
 else
 	mv -i ./* ./.* $DEST
@@ -112,3 +111,6 @@ fi
 
 echo
 echo "=> Successfully finished the installation..."
+if(gum confirm "Do you want to reboot?"); then
+	reboot
+fi
