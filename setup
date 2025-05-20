@@ -1,5 +1,61 @@
 #!/bin/bash
 
+# Helper functions
+
+choose_multiple()
+{
+	gum choose --cursor-prefix="[ ] " --selected-prefix="[x] " --unselected-prefix="[ ] " --no-limit "$@"
+}
+
+choose_one()
+{
+	gum choose "$@"
+}
+
+install_pkgs()
+{
+	for pkg in "$@"; do
+		if sudo $pkgmgr -Q "$pkg" &> /dev/null; then
+			echo "[ Skipped ] $pkg is already installed..."
+		else
+			sudo gum spin --title="Installing $pkg..." -- $pkgmgr --noconfirm -S $pkg
+			echo "=> Successfully installed $pkg..."
+		fi
+	done
+}
+
+install_helper()
+{
+	gum spin --title="Cloning repo..." -- git clone "https://aur.archlinux.org/$1.git"
+	cd $1
+	gum spin --title="Building... " -- makepkg --noconfirm -si
+	cd ..
+	rm -rf ./yay
+	echo "=> Successfully installed $1"
+}
+
+# Installation
+
+clear
+pkgmgr=pacman
+
+# Choosing an AUR helper
+
+echo "Choose your AUR helper:"
+OPTIONS=$(choose_one "Yay" "Paru" "None")
+case $OPTIONS in
+	Yay)
+		install_helper yay
+		pkgmgr=yay
+	;;
+	Paru)
+		install_helper paru
+		pkgmgr=paru
+	;;
+	*)
+		echo "=> Continuing without an AUR helper..."
+esac
+
 # starship
 # nvim
 # stow
