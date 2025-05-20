@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # --no-folding ensures no directory symlinks will be created
-stow --no-folding .
+stow --target=$HOME --no-folding .
