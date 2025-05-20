@@ -76,7 +76,7 @@ case $OPTIONS in
 		chsh -s $(which zsh) ;;
 	Bash)
 		install_pkgs bash 
-		chsh -s $which zsh) ;;
+		chsh -s $(which bash) ;;
 esac
 
 # Installing packages
