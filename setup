@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOTFILES=https://github.com/Feeeeddmmmeee/dotfiles
+
 # Helper functions
 
 choose_multiple()
@@ -15,7 +17,7 @@ choose_one()
 install_pkgs()
 {
 	for pkg in "$@"; do
-		if sudo $pkgmgr -Q "$pkg" &> /dev/null; then
+		if $pkgmgr -Q "$pkg" &> /dev/null; then
 			echo "[ Skipped ] $pkg is already installed..."
 		else
 			sudo gum spin --title="Installing $pkg..." -- $pkgmgr --noconfirm -S $pkg
@@ -26,6 +28,11 @@ install_pkgs()
 
 install_helper()
 {
+	if command -v $1 &> /dev/null; then
+		echo "[ Skipped ] $1 is already installed..."
+		return 0
+	fi
+
 	gum spin --title="Cloning repo..." -- git clone "https://aur.archlinux.org/$1.git"
 	cd $1
 	gum spin --title="Building... " -- makepkg --noconfirm -si
@@ -58,23 +65,47 @@ case $OPTIONS in
 		echo "=> Continuing without an AUR helper..."
 esac
 
-# starship
-# nvim
-# stow
-# kitty
-# hyprland
-# yay
-# python-pywal16
-# swww
+# Choosing a shell
 
-# zen-browser-bin/firefox
+echo
+echo "Choose which shell you want to use:"
+OPTIONS=$(choose_one "Zsh" "Bash")
+case $OPTIONS in
+	Zsh)
+		install_pkgs zsh ;;
+	Bash)
+		install_pkgs bash ;;
+esac
 
-# pywal
-# python-pywalfox
-# imagemagick
+# Installing packages
 
-# slurp
-# grim
-# wl-clipboard
+echo
+echo "Choose packages (all are recommended):"
+OPTIONS=$(choose_multiple --selected=* hyprland nvim kitty swww starship firefox python-pywal16 python-pywalfox imagemagick slurp grim wl-clipboard less)
+install_pkgs $OPTIONS
 
-# less (for git log)
+# Syncing the configs
+
+DEST=$HOME
+echo
+if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
+	install_pkgs stow
+	export GUM_FILE_FILE=0
+	echo "Choose where you want to put the dotfiles folder:"
+	PATH=$(gum file --directory --all /home)
+	pwd
+	cd ..
+	pwd
+	/bin/mv -i dotfiles/ $PATH
+	echo "=> Successfully moved dotfiles to $PATH..."
+	cd "$PATH/dotfiles"
+	./syncdots
+else
+	mv -i ./* ./.* $DEST
+	cd ..
+	rm -rf dotfiles/
+	echo "=> Successfully moved all configs into $HOME"
+fi
+
+echo
+echo "=> Successfully finished the installation..."
