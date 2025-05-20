@@ -5,7 +5,7 @@
 - **Shell:** Zsh
 
 ## :desktop_computer: Screenshots
-
+Coming soon :3
 
 ## :inbox_tray: Installation
 Just clone the repo and use the install script :)
