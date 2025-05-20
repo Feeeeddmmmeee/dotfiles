@@ -1,5 +1,5 @@
 #!/bin/bash
 
-DIR="$HOME/Pictures/wallpapers"
+DIR="~/Pictures/wallpapers"
 FILE=$(find "$DIR" -type f -o -type l | shuf -n 1)
 set-wallpaper "$FILE"

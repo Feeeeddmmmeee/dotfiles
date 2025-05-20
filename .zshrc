@@ -20,6 +20,7 @@ alias ..="cd .."
 alias :q="exit"
 alias :wq="exit"
 alias sdn="shutdown now"
+alias nv="nvim"
 alias icat="kitty +kitten icat"
 
 alias onefetch="onefetch --include-hidden"
@@ -33,4 +34,6 @@ alias grep="grep --color=auto"
 
 # Pywal
 (cat ~/.cache/wal/sequences &)
-source ~/.cache/wal/colors-tty.sh
+
+# For tty
+# source ~/.cache/wal/colors-tty.sh
