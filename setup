@@ -72,9 +72,11 @@ echo "Choose which shell you want to use:"
 OPTIONS=$(choose_one "Zsh" "Bash")
 case $OPTIONS in
 	Zsh)
-		install_pkgs zsh ;;
+		install_pkgs zsh
+		chsh -s $(which zsh) ;;
 	Bash)
-		install_pkgs bash ;;
+		install_pkgs bash 
+		chsh -s $which zsh) ;;
 esac
 
 # Installing packages
