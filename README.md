@@ -16,6 +16,14 @@ cd dotfiles
 ./install
 ```
 
+## :hammer: TODO
+- [ ] nvidia-open, nvidia-utils
+- [ ] fonts
+- [ ] razer pywal
+- [ ] pc case pywal
+- [ ] bar/widgets
+- [ ] ssh (?)
+
 ## :warning: Disclaimer: WIP
 I'm still working on the conifgs and most are not finished!
 
