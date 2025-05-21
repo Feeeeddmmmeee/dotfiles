@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pkgmgr=pacman
+
 # Helper functions
 
 choose_multiple()
@@ -18,7 +20,7 @@ install_pkgs()
 		if $pkgmgr -Q "$pkg" &> /dev/null; then
 			echo "[ Skipped ] $pkg is already installed..."
 		else
-			sudo gum spin --title="Installing $pkg..." -- $pkgmgr --noconfirm -S $pkg
+			gum spin --title="Installing $pkg..." -- $pkgmgr --noconfirm -S $pkg
 			echo "=> Successfully installed $pkg..."
 		fi
 	done
@@ -28,6 +30,7 @@ install_helper()
 {
 	if command -v $1 &> /dev/null; then
 		echo "[ Skipped ] $1 is already installed..."
+		pkgmgr=$1
 		return 0
 	fi
 
@@ -48,19 +51,16 @@ install_helper()
 # Installation
 
 clear
-pkgmgr=pacman
 
 # Choosing an AUR helper
 
 echo "Choose your AUR helper:"
-OPTIONS=$(choose_one "Yay" "Paru" "None")
+OPTIONS=$(choose_one "Yay" "Paru")
 case $OPTIONS in
 	Yay)
 		install_helper yay ;;
 	Paru)
 		install_helper paru ;;
-	*)
-		echo "=> Continuing without an AUR helper..."
 esac
 
 # Choosing a shell
@@ -71,10 +71,20 @@ OPTIONS=$(choose_one "Zsh" "Bash")
 case $OPTIONS in
 	Zsh)
 		install_pkgs zsh
-		chsh -s $(which zsh) ;;
+		if [[ "$SHELL" != "$(which zsh)" ]]; then
+			chsh -s $(which zsh)
+		else
+			echo "[ Skipped ] $(which zsh) is already the default shell..."
+		fi
+		;;
 	Bash)
 		install_pkgs bash 
-		chsh -s $(which bash) ;;
+		if [[ "$SHELL" != "$(which bash)" ]]; then
+			chsh -s $(which bash)
+		else
+			echo "[ Skipped ] $(which bash) is already the default shell..."
+		fi
+		;;
 esac
 
 # Installing packages

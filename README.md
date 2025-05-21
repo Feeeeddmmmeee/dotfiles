@@ -22,6 +22,7 @@ cd dotfiles
 - [ ] razer pywal
 - [ ] pc case pywal
 - [ ] bar/widgets
+- [ ] spicetify
 - [ ] ssh (?)
 
 ## :warning: Disclaimer: WIP
