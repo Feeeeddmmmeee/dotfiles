@@ -9,21 +9,21 @@ required=(
 	gum
 )
 
+if ! command -v $pkgmgr &> /dev/null; then
+	printf "[ ERROR ] Couldn't find a supported package manager ($pkgmgr). Exiting...\n"
+	exit 1
+fi
+
 for pkg in "${required[@]}"; do
-	if command -v $pkgmgr &> /dev/null; then
-		if sudo $pkgmgr -Q "$pkg" &> /dev/null; then
-			printf "[ Skipped ] $pkg is already installed...\n"
-		else
-			printf "=> Installing $pkg...\n"
-			if sudo $pkgmgr -S --noconfirm "$pkg" &> /dev/null; then
-				printf "[ Installed ] Successfully installed $pkg...\n"
-			else
-				printf "[ ERROR ] Failed to install $pkg!\n"
-			fi
-		fi
+	if sudo $pkgmgr -Q "$pkg" &> /dev/null; then
+		printf "[ Skipped ] $pkg is already installed...\n"
 	else
-		printf "[ ERROR ] Couldn't find a supported package manager ($pkgmgr). Exiting...\n"
-		exit 1
+		printf "=> Installing $pkg...\n"
+		if sudo $pkgmgr -S --noconfirm "$pkg" &> /dev/null; then
+			printf "[ Installed ] Successfully installed $pkg...\n"
+		else
+			printf "[ ERROR ] Failed to install $pkg!\n"
+		fi
 	fi
 done
 
