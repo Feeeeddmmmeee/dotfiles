@@ -1,7 +1,5 @@
 #!/bin/bash
 
-DOTFILES=https://github.com/Feeeeddmmmeee/dotfiles
-
 # Helper functions
 
 choose_multiple()
@@ -94,15 +92,15 @@ if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 	install_pkgs stow
 	export GUM_FILE_FILE=0
 	echo "Choose where you want to put the dotfiles folder:"
-	CHOSEN=$(gum file --directory --all /home)
+	DOT_PATH=$(gum file --directory --all /home)
 	cd ..
 
-	if [[ "$CHOSEN" != "$(pwd)" ]]; then
-		mv -i dotfiles/ $CHOSEN
+	if [[ "$DOT_PATH" != "$(pwd)" ]]; then
+		mv -i dotfiles/ $DOT_PATH
 	fi
 
-	echo "=> Successfully moved dotfiles to $CHOSEN..."
-	cd "$CHOSEN/dotfiles"
+	echo "=> Successfully moved dotfiles to $DOT_PATH..."
+	cd "$DOT_PATH/dotfiles"
 	./syncdots
 else
 	mv -i ./* ./.* $DEST

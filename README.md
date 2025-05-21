@@ -9,7 +9,7 @@
 Coming soon :3
 
 ## :inbox_tray: Installation
-Just clone the repo and use the install script :)
+Just clone the repo and use the install script :3
 ```bash
 git clone https://github.com/Feeeeddmmmeee/dotfiles
 cd dotfiles
@@ -17,7 +17,7 @@ cd dotfiles
 ```
 
 ## :warning: Disclaimer: WIP
-I'm still working on the conifgs and most are not finished! (The install script doesn't work yet either)
+I'm still working on the conifgs and most are not finished!
 
 <p align="center">
     <img src="https://github.com/catppuccin/catppuccin/blob/main/assets/footers/gray0_ctp_on_line.png?raw=true"
