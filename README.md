@@ -16,12 +16,12 @@ cd dotfiles
 ./install
 ```
 
-This config uses GNU stow to manage the repostiory and minimize home cluttering. To add new files into the repo make sure you're editing the dotfiles folder and not your home. Afterwards just run `dotfiles/syncdots`. (The install script has on option to just copy all configs instead)
+This config uses GNU stow to manage the repostiory and minimize home cluttering. To add new files into the repo make sure you're editing the dotfiles folder and not your home. Afterwards just run `dotfiles/syncdots`. (The install script has an option to just copy all configs instead)
 
 ## :hammer: TODO
 - [x] fonts
+- [x] razer pywal
 - [ ] nvidia-open, nvidia-utils
-- [ ] razer pywal
 - [ ] pc case pywal
 - [ ] bar/widgets
 - [ ] spicetify

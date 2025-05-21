@@ -91,18 +91,31 @@ esac
 
 echo
 echo "Choose which required packages to install:"
-OPTIONS=$(choose_multiple --selected=* hyprland nvim kitty swww starship python-pywal16 python-pywalfox imagemagick slurp grim wl-clipboard less)
+OPTIONS=$(choose_multiple --selected=* hyprland nvim kitty swww starship python-pywal16 python-pywalfox imagemagick slurp grim wl-clipboard less clang unzip)
 install_pkgs $OPTIONS
 
 echo
 echo "Choose which optional packages to install:"
-OPTIONS=$(choose_multiple --selected=* btop firefox)
+OPTIONS=$(choose_multiple --selected=* btop firefox fastfetch onefetch)
 install_pkgs $OPTIONS
 
 echo
 echo "Choose what fonts you want to install:"
 OPTIONS=$(choose_multiple --selected=* noto-fonts noto-fonts-extra noto-fonts-cjk noto-fonts-emoji)
 install_pkgs $OPTIONS
+
+echo
+if (gum confirm "Do you want to synchronize your razer devices with pywal?"); then
+	echo "=> Adding $USER to the plugdev group (OpenRazer requirement)..."
+	if id -nG "$USER" | grep -qw "plugdev"; then
+		echo "[ Skipped ] $USER is already in the plugdev group..."
+	else
+		sudo gpasswd -a $USER plugdev
+	fi
+	install_pkgs openrazer-daemon razer-cli
+else
+	echo "[ Skipped ] Skipping razer setup..."
+fi
 
 # Syncing the configs
 
@@ -131,6 +144,6 @@ fi
 
 echo
 echo "=> Successfully finished the installation..."
-if(gum confirm "Do you want to reboot?"); then
+if(gum confirm "Do you want to reboot? (Required for all changes to take effect)"); then
 	reboot
 fi
