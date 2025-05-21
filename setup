@@ -66,7 +66,7 @@ esac
 # Choosing a shell
 
 echo
-echo "Choose which shell you want to use:"
+echo "Choose which shell you want to use (Zsh is recommended, Bash has no config apart from a prompt):"
 OPTIONS=$(choose_one "Zsh" "Bash")
 case $OPTIONS in
 	Zsh)
@@ -92,6 +92,11 @@ esac
 echo
 echo "Choose packages (all are recommended):"
 OPTIONS=$(choose_multiple --selected=* hyprland nvim kitty swww starship firefox python-pywal16 python-pywalfox imagemagick slurp grim wl-clipboard less)
+install_pkgs $OPTIONS
+
+echo
+echo "Choose what fonts you want to install:"
+OPTIONS=$(choose_multiple --selected=* noto-fonts noto-fonts-extra noto-fonts-cjk noto-fonts-emoji)
 install_pkgs $OPTIONS
 
 # Syncing the configs

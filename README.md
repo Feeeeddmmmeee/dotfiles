@@ -17,8 +17,8 @@ cd dotfiles
 ```
 
 ## :hammer: TODO
+- [x] fonts
 - [ ] nvidia-open, nvidia-utils
-- [ ] fonts
 - [ ] razer pywal
 - [ ] pc case pywal
 - [ ] bar/widgets
