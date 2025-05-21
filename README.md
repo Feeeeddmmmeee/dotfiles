@@ -25,7 +25,6 @@ This config uses GNU stow to manage the repostiory and minimize home cluttering.
 - [ ] pc case pywal
 - [ ] bar/widgets
 - [ ] spicetify
-- [ ] ssh (?)
 
 ## :warning: Disclaimer: WIP
 I'm still working on the conifgs and most are not finished!

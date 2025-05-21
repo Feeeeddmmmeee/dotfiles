@@ -96,7 +96,7 @@ install_pkgs $OPTIONS
 
 echo
 echo "Choose which optional packages to install:"
-OPTIONS=$(choose_multiple --selected=* btop firefox fastfetch onefetch)
+OPTIONS=$(choose_multiple --selected=* btop firefox fastfetch onefetch openssh)
 install_pkgs $OPTIONS
 
 echo
