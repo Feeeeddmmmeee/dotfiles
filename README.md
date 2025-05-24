@@ -1,3 +1,20 @@
+<div align="center" style="font-family: monospace">
+    <pre>
+                     .__          .___      __    _____.__.__                 
+_____ _______   ____ |  |__     __| _/_____/  |__/ ____\__|  |   ____   ______
+\__  \\_  __ \_/ ___\|  |  \   / __ |/  _ \   __\   __\|  |  | _/ __ \ /  ___/
+ / __ \|  | \/\  \___|   Y  \ / /_/ (  <_> )  |  |  |  |  |  |_\  ___/ \___ \ 
+(____  /__|    \___  >___|  / \____ |\____/|__|  |__|  |__|____/\___  >____  >
+     \/            \/     \/       \/                               \/     \/ 
+ </pre>
+</div><br>
+
+<div align="center">
+    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Feeeeddmmmeee/dotfiles?style=for-the-badge&logo=apachespark&logoColor=%23c3c3c3&labelColor=%230f0f10&color=%23993364">
+    <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/Feeeeddmmmeee/dotfiles?style=for-the-badge&logo=github&logoColor=%23c3c3c3&labelColor=%230f0f10&color=%23993364">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Feeeeddmmmeee/dotfiles?style=for-the-badge&logo=archlinux&logoColor=%23c3c3c3&labelColor=%230f0f10&color=%23993364">
+</div>
+
 ## :heart: About
 - **Distro:** Arch Linux (btw)
 - **Compositor/WM:** Hyprland
