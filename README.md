@@ -15,8 +15,34 @@ git clone https://github.com/Feeeeddmmmeee/dotfiles
 cd dotfiles
 ./install
 ```
-
 This config uses GNU stow to manage the repostiory and minimize home cluttering. To add new files into the repo make sure you're editing the dotfiles folder and not your home. Afterwards just run `dotfiles/syncdots`. (The install script has an option to just copy all configs instead)
+
+## ⌨️ Keybinds
+### 🖱️ Windows + WM
+| Keybind    | Action    |
+|------------|-----------|
+| `SUPER + [1-9]` | Switch workspace |
+| `SUPER + SHIFT + [1-9]` | Move active window to workspace |
+| `SUPER + ARROWS` | Move to next/previous workspace |
+| `SUPER + [H, J, K, L]` | Switch window focus |
+| `SUPER + SHIFT + [H, J, K, L]` | Move window within workspace |
+| `SUPER + Q` | Kill window |
+| `SUPER + SHIFT + Q` | Quit Hyprland |
+| `SUPER + F` | Fullscreen |
+| `SUPER + V` | Toggle floating/tiling for active window |
+| `SUPER + SHIFT + ENTER` | Swap active window with master |
+
+### 🛠️ Applications + Scripts
+| Keybind    | Action    |
+|------------|-----------|
+| `SUPER + ENTER` | Open terminal (Kitty) |
+| `SUPER + B` | Open browser (Firefox) |
+| `SUPER + SHIFT + S` | Screenshot a selected area |
+| `SUPER + SHIFT + F` | Screenshot the entire screen |
+| `SUPER + W` | Select a random wallpaper |
+| `SUPER + D` | Open Discord |
+| `SUPER + M` | Open Spotify |
+| `SUPER + S` | Open Steam |
 
 ## :hammer: TODO
 - [x] fonts
