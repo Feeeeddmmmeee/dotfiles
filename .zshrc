@@ -27,6 +27,7 @@ alias icat="kitty +kitten icat"
 
 alias onefetch="onefetch --include-hidden"
 alias neofetch="fastfetch"
+alias matrix="unimatrix -af -l m -s 95"
 
 alias rm="rm -i"
 alias mv="mv -i"
