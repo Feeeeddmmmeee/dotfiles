@@ -1,0 +1,32 @@
+@import "/home/janek/.cache/wal/colors-waybar.css";
+
+*{
+	all: unset;
+	font-family: "JetBrains Mono Nerd Font";
+}
+
+window>box{
+	margin: 14px 7px 14px 14px;
+	border-radius: 10px;
+	background-color: mix(@background, transparent, 0.8);
+	color: @foreground;
+}
+
+#clock{
+	color: @foreground;
+	padding: 15px 10px;
+	margin: 0px;
+}
+
+#custom-logo {
+	color: @color3;
+	padding: 15px 10px 15px 8px;
+	font-size: 25;
+}
+
+#workspaces {
+	color: @color1;
+	padding: 15px 10px;
+	margin: 0px;
+	border-radius: 2px;
+}
