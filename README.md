@@ -64,7 +64,7 @@ This config uses GNU stow to manage the repostiory and minimize home cluttering.
 ## :hammer: TODO
 - [x] fonts
 - [x] razer pywal
-- [ ] bar/widgets
+- [x] simple bar
 - [ ] nvim config refresh
 - [ ] nvidia-open, nvidia-utils
 - [ ] ~~pc case pywal~~ unlikely to work ://
