@@ -48,16 +48,14 @@ install_helper()
 	fi
 }
 
-backup_dirs()
+remove_conflicts()
 {
-	for dir in "$@"; do
-		if [ -d $dir ]; then
-			echo "[ INFO ] Config for $dir already exists! Moving to $dir.backup..."
-			mv $dir "$dir.backup"
+	for file in "$@"; do
+		if [ -e $file ]; then
+			echo "[ INFO ] $file already exists! Moving to $file.backup..."
+			mv $file "$file.backup"
 		fi
-		echo "=> Successfully created config files for $dir"
 	done
-
 }
 
 # Installation
@@ -142,7 +140,6 @@ fi
 
 # Syncing the configs
 
-DEST=$HOME
 echo
 if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 	install_pkgs stow
@@ -161,17 +158,16 @@ if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 	mkdir -p local/bin
 	mkdir -p Pictures/screenshots
 	mkdir -p Pictures/wallpapers
+	remove_conflicts .zshrc .bashrc .zprofile
 
-	echo
-	echo "What configs do you want to install?"
 	cd "$HOME/.config"
-	OPTIONS=$(choose_multiple --selected=* "btop" "hypr" "kitty" "nvim" "waybar" "starship.toml")
-	backup_dirs $OPTIONS
+	CONFIG_FILES=$(ls -A "$DOT_PATH/dotfiles/.config")
+	remove_conflicts $CONFIG_FILES
 
 	cd "$DOT_PATH/dotfiles"
 	./syncdots
 else
-	mv -i ./* ./.* $DEST
+	mv -i ./* ./.* $HOME
 	cd ..
 	rm -rf dotfiles/
 	echo "=> Successfully moved all configs into $HOME"
