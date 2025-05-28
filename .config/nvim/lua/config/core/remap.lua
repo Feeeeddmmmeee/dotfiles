@@ -1,10 +1,10 @@
 -- Mapping function
-local function map(mode, lhs, rhs, opts)
+local function map(mode, keybind, action, opts)
 	local options = { noremap = true }
 	if opts then
 		options = vim.tbl_extend("force", options, opts)
 	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+	vim.api.nvim_set_keymap(mode, keybind, action, options)
 end
 
 -- Load current file as Lazy plugin config

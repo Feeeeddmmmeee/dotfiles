@@ -1,21 +1,38 @@
 return {
 	"hrsh7th/nvim-cmp",
-	event = "InsertEnter",
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
+		"onsails/lspkind.nvim",
+		"L3MON4D3/LuaSnip",
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
-		"saadparwaiz1/cmp_luasnip",
-		"hrsh7th/cmp-nvim-lua",
-		"L3MON4D3/LuaSnip",
-		"rafamadriz/friendly-snippets",
-		"onsails/lspkind.nvim",
 	},
 	config = function()
-		local cmp = require("cmp")
+		local cmp = require('cmp')
+		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 
+		require("luasnip.loaders.from_vscode").lazy_load()
+
 		cmp.setup({
+			sources = {
+				{name = 'nvim_lsp'},
+				{name = 'luasnip'},
+				{name = 'path'},
+				{name = 'buffer'}
+			},
+			mapping = cmp.mapping.preset.insert({
+				-- `Enter` key to confirm completion
+				['<CR>'] = cmp.mapping.confirm({select = false}),
+
+				['<C-Space>'] = cmp.mapping.complete(),
+				["<C-k>"] = cmp.mapping.select_prev_item(),
+				["<C-j>"] = cmp.mapping.select_next_item(),
+				["<TAB>"] = cmp.mapping.select_next_item(),
+
+				-- Scroll up and down in the completion documentation
+				['<C-u>'] = cmp.mapping.scroll_docs(-4),
+				['<C-d>'] = cmp.mapping.scroll_docs(4),
+			}),
 			snippet = {
 				expand = function(args)
 					vim.snippet.expand(args.body)
@@ -25,18 +42,6 @@ return {
 				completion = cmp.config.window.bordered(),
 				documentation = cmp.config.window.bordered(),
 			},
-			mapping = cmp.mapping.preset.insert({
-				["<C-k>"] = cmp.mapping.select_prev_item(),
-				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<TAB>"] = cmp.mapping.select_next_item(),
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
-			}),
-			sources = cmp.config.sources({
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "path" },
-			}),
 			formatting = {
 				format = lspkind.cmp_format({
 					maxwidth = 50,
@@ -44,5 +49,6 @@ return {
 				}),
 			},
 		})
-	end,
+
+	end
 }
