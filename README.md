@@ -61,34 +61,37 @@ cd dotfiles
 ### 🖱️ Windows + WM
 | Keybind    | Action    |
 |------------|-----------|
-| `SUPER + [1-9]` | Switch workspace |
-| `SUPER + SHIFT + [1-9]` | Move active window to workspace |
-| `SUPER + ARROWS` | Move to next/previous workspace |
-| `SUPER + [H, J, K, L]` | Switch window focus |
-| `SUPER + SHIFT + [H, J, K, L]` | Move window within workspace |
-| `SUPER + Q` | Kill window |
-| `SUPER + SHIFT + Q` | Quit Hyprland |
-| `SUPER + F` | Fullscreen |
-| `SUPER + V` | Toggle floating/tiling for active window |
-| `SUPER + SHIFT + ENTER` | Swap active window with master |
+| <kbd>SUPER + [1-9]</kbd> | Switch workspace |
+| <kbd>SUPER + SHIFT + [1-9]</kbd> | Move active window to workspace |
+| <kbd>SUPER + ARROWS</kbd> | Move to next/previous workspace |
+| <kbd>SUPER + [H, J, K, L]</kbd> | Switch window focus |
+| <kbd>SUPER + SHIFT + [H, J, K, L]</kbd> | Move window within workspace |
+| <kbd>SUPER + Q</kbd> | Kill window |
+| <kbd>SUPER + SHIFT + Q</kbd> | Quit Hyprland |
+| <kbd>SUPER + F</kbd> | Fullscreen |
+| <kbd>SUPER + V</kbd> | Toggle floating/tiling for active window |
+| <kbd>SUPER + SHIFT + ENTER</kbd> | Swap active window with master |
 
 ### 🛠️ Applications + Scripts
 | Keybind    | Action    |
 |------------|-----------|
-| `SUPER + ENTER` | Open terminal (Kitty) |
-| `SUPER + B` | Open browser (Firefox) |
-| `SUPER + SHIFT + S` | Screenshot a selected area |
-| `SUPER + SHIFT + F` | Screenshot the entire screen |
-| `SUPER + W` | Select a random wallpaper |
-| `SUPER + D` | Open Discord |
-| `SUPER + M` | Open Spotify |
-| `SUPER + S` | Open Steam |
+| <kbd>SUPER + ENTER</kbd> | Open terminal (Kitty) |
+| <kbd>SUPER + B</kbd> | Open browser (Firefox) |
+| <kbd>SUPER + SHIFT + S</kbd> | Screenshot a selected area |
+| <kbd>SUPER + SHIFT + F</kbd> | Screenshot the entire screen |
+| <kbd>SUPER + W</kbd> | Select a random wallpaper |
+| <kbd>SUPER + D</kbd> | Open Discord |
+| <kbd>SUPER + M</kbd> | Open Spotify |
+| <kbd>SUPER + S</kbd> | Open Steam |
 
 ## :hammer: TODO
 - [x] fonts
 - [x] razer pywal
 - [x] simple bar
 - [x] nvim config refresh
+- [ ] bar with more features (possbily eww)
+- [ ] more things in the install script (locale, time etc.)
+- [ ] fingerprint auth
 - [ ] app launcher
 - [ ] nvidia-open, nvidia-utils
 - [ ] ~~pc case pywal~~ unlikely to work ://
