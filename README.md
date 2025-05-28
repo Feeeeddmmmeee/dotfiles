@@ -8,6 +8,7 @@ _____ _______   ____ |  |__     __| _/_____/  |__/ ____\__|  |   ____   ______
      \/            \/     \/       \/                               \/     \/ 
  </pre>
 </div>
+     
 <br>
 
 <div align="center">
@@ -24,13 +25,25 @@ _____ _______   ____ |  |__     __| _/_____/  |__/ ____\__|  |   ____   ______
     <a href="#%EF%B8%8F-keybinds">Keybinds</a>
 </h1>
 
-## :heart: About
-- **Distro:** Arch Linux (btw)
-- **Compositor/WM:** Hyprland
-- **Terminal:** Kitty
-- **Shell:** Zsh
-- **Editor:** Neovim
+<img alt="screenshot" src="https://github.com/user-attachments/assets/b1a7c293-77d5-4723-8896-86446747a0bb" align="right" width="400px">
 
+
+Thanks for dropping by! This is my personal Arch Linux configuration repository.
+
+The installation process can be automated with the install script. Nothing but a working internet connection and arch installation is required.
+
+Here is more information about my setup:
+
+- **Distribution:** [arch](https://archlinux.org/)
+- **Window Manager:** [hyprland](https://github.com/hyprwm/Hyprland)
+- **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
+- **Shell:** [zsh](https://www.zsh.org/)
+- **Bar:** [waybar](https://github.com/Alexays/Waybar)
+- **Color schemes:** [pywal16](https://github.com/eylles/pywal16)
+- **Editor:** [neovim](https://github.com/neovim/neovim)
+- **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
+- **Wallpaper Daemon:** [swww](https://github.com/LGFae/swww)
+    
 ## :desktop_computer: Screenshots
 Coming soon :3
 
@@ -41,7 +54,8 @@ git clone https://github.com/Feeeeddmmmeee/dotfiles
 cd dotfiles
 ./install
 ```
-This config uses GNU stow to manage the repostiory and minimize home cluttering. To add new files into the repo make sure you're editing the dotfiles folder and not your home. Afterwards just run `dotfiles/syncdots`. (The install script has an option to just copy all configs instead)
+> [!NOTE]
+> This config uses GNU stow for easier git management, which means some of you folders in .config will become symlinks pointing to this repository's location on your machine.
 
 ## ⌨️ Keybinds
 ### 🖱️ Windows + WM
@@ -75,11 +89,11 @@ This config uses GNU stow to manage the repostiory and minimize home cluttering.
 - [x] razer pywal
 - [x] simple bar
 - [x] nvim config refresh
+- [ ] app launcher
 - [ ] nvidia-open, nvidia-utils
 - [ ] ~~pc case pywal~~ unlikely to work ://
 
-## :warning: Disclaimer: WIP
-I'm still working on the conifgs and most are not finished!
+<br>
 
 <p align="center">
     <img src="https://github.com/catppuccin/catppuccin/blob/main/assets/footers/gray0_ctp_on_line.png?raw=true"
