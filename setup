@@ -159,6 +159,8 @@ if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 
 	cd $HOME 
 	mkdir -p local/bin
+	mkdir -p Pictures/screenshots
+	mkdir -p Pictures/wallpapers
 
 	echo
 	echo "What configs do you want to install?"
