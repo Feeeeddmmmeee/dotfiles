@@ -3,7 +3,7 @@
 # Use pacman or change it to a package manager of your choice (has to support pacman syntax like yay for instance)
 pkgmgr=pacman
 
-# Packages that have to be installed before downloading the config
+# Packages that have to be installed before running the setup script
 required=(
 	git
 	gum
@@ -27,5 +27,5 @@ for pkg in "${required[@]}"; do
 	fi
 done
 
-# Run a different script for downloading and setting up all config files
+# Run a different script for setting up all config files
 ./setup
