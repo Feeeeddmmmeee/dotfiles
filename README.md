@@ -55,7 +55,7 @@ cd dotfiles
 ./install
 ```
 > [!NOTE]
-> This config uses GNU stow for easier git management, which means some of you folders in .config will become symlinks pointing to this repository's location on your machine.
+> This config uses GNU stow for easier git management, which means some of your folders in .config will become symlinks pointing to this repository's location on your machine.
 
 ## ⌨️ Keybinds
 ### 🖱️ Windows + WM
