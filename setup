@@ -48,6 +48,18 @@ install_helper()
 	fi
 }
 
+backup_dirs()
+{
+	for dir in "$@"; do
+		if [ -d $dir ]; then
+			echo "[ INFO ] Config for $dir already exists! Moving to $dir.backup..."
+			mv $dir "$dir.backup"
+		fi
+		echo "=> Successfully created config files for $dir"
+	done
+
+}
+
 # Installation
 
 clear
@@ -144,6 +156,16 @@ if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 	fi
 
 	echo "=> Successfully moved dotfiles to $DOT_PATH..."
+
+	cd $HOME 
+	mkdir -p local/bin
+
+	echo
+	echo "What configs do you want to install?"
+	cd "$HOME/.config"
+	OPTIONS=$(choose_multiple --selected=* "btop" "hypr" "kitty" "nvim" "waybar" "starship.toml")
+	backup_dirs $OPTIONS
+
 	cd "$DOT_PATH/dotfiles"
 	./syncdots
 else
