@@ -7,7 +7,7 @@ local function map(mode, keybind, action, opts)
 	vim.api.nvim_set_keymap(mode, keybind, action, options)
 end
 
--- Load current file as Lazy plugin config
+-- Open Lazy menu
 map("n", "<leader>l", ":Lazy<CR>")
 
 -- Moving code around in visual mode
