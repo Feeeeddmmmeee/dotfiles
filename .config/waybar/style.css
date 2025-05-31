@@ -3,6 +3,7 @@
 *{
 	all: unset;
 	font-family: "JetBrains Mono Nerd Font";
+	font-size: 18px;
 }
 
 window>box{
@@ -20,13 +21,13 @@ window>box{
 
 #custom-logo {
 	color: @color3;
-	padding: 15px 10px 15px 8px;
-	font-size: 25;
+	padding: 15px 10px 15px 5px;
+	font-size: 30px;
 }
 
 #workspaces {
 	color: @color1;
-	padding: 15px 10px;
+	padding: 15px 10px 15px 5px;
 	margin: 0px;
 	border-radius: 2px;
 }
