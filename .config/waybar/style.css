@@ -2,7 +2,7 @@
 
 *{
 	all: unset;
-	font-family: "JetBrains Mono Nerd Font";
+	font-family: "JetBrainsMono Nerd Font Propo";
 	font-size: 18px;
 }
 
@@ -15,19 +15,17 @@ window>box{
 
 #clock{
 	color: @foreground;
-	padding: 15px 10px;
-	margin: 0px;
+	padding: 10px;
 }
 
 #custom-logo {
 	color: @color3;
-	padding: 15px 10px 15px 5px;
 	font-size: 30px;
+	padding: 10px;
 }
 
 #workspaces {
 	color: @color1;
-	padding: 15px 10px 15px 5px;
-	margin: 0px;
 	border-radius: 2px;
+	padding: 10px;
 }
