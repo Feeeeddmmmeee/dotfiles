@@ -111,7 +111,7 @@ install_pkgs $OPTIONS
 
 echo
 echo "Choose what fonts you want to install:"
-OPTIONS=$(choose_multiple --selected=* ttf-jetbrains-mono-nerd noto-fonts noto-fonts-extra noto-fonts-cjk noto-fonts-emoji)
+OPTIONS=$(choose_multiple --selected=* ttf-jetbrains-mono-nerd ttf-liberation noto-fonts noto-fonts-extra noto-fonts-cjk noto-fonts-emoji)
 install_pkgs $OPTIONS
 
 echo
