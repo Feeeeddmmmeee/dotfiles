@@ -84,6 +84,9 @@ cd dotfiles
 | <kbd>SUPER + M</kbd> | Open Spotify |
 | <kbd>SUPER + S</kbd> | Open Steam |
 
+> [!NOTE]
+> By default screenshots are saved to `~/Pictures/screenshots/` and copied to your clipboard.
+
 ## :hammer: TODO
 - [x] fonts
 - [x] razer pywal
