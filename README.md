@@ -84,6 +84,8 @@ cd dotfiles
 | <kbd>SUPER + M</kbd> | Open Spotify |
 | <kbd>SUPER + S</kbd> | Open Steam |
 
+<br>
+
 > [!NOTE]
 > By default screenshots are saved to `~/Pictures/screenshots/` and copied to your clipboard.
 
@@ -98,6 +100,9 @@ cd dotfiles
 - [ ] app launcher
 - [ ] nvidia-open, nvidia-utils
 - [ ] ~~pc case pywal~~ unlikely to work ://
+
+## :exclamation: Known Issues
+- Every once in a while after changing my keyboard's backlight settings it turns off stops responding for a few seconds.
 
 <br>
 
