@@ -43,9 +43,10 @@ Here is more information about my setup:
 - **Editor:** [neovim](https://github.com/neovim/neovim)
 - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
 - **Wallpaper Daemon:** [swww](https://github.com/LGFae/swww)
-    
-## :desktop_computer: Screenshots
-Coming soon :3
+
+## :desktop_computer: Screenshots 
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ebcd5393-73a1-4724-9f86-0f3e7968b0d0" />
 
 ## :inbox_tray: Installation
 Just clone the repo and use the install script :3
