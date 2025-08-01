@@ -102,7 +102,7 @@ cd dotfiles
 - [ ] ~~pc case pywal~~ unlikely to work ://
 
 ## :exclamation: Known Issues
-- Every once in a while after changing my keyboard's backlight settings it turns off stops responding for a few seconds.
+- Every once in a while after changing my keyboard's backlight settings it turns off and stops responding for a few seconds.
 
 <br>
 
