@@ -83,6 +83,7 @@ cd dotfiles
 | <kbd>SUPER + D</kbd> | Open Discord |
 | <kbd>SUPER + M</kbd> | Open Spotify |
 | <kbd>SUPER + S</kbd> | Open Steam |
+| <kbd>SUPER + O</kbd> | Open OBS |
 
 <br>
 
