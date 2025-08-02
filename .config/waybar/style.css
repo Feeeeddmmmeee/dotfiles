@@ -36,14 +36,19 @@ window>box {
 	padding: 5px;
 }
 
-#custom-logo {
-	color: @color3;
-	font-size: 30px;
-	padding: 5px;
-}
-
 #workspaces {
 	color: @color1;
 	border-radius: 2px;
+	padding: 5px;
+}
+
+#custom-updates {
+	color: @foreground;
+	padding: 5px;
+}
+
+#custom-logo {
+	color: @color3;
+	font-size: 30px;
 	padding: 5px;
 }

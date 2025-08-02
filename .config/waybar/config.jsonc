@@ -5,7 +5,11 @@
 		"layer": "top",
 		"position": "left",
 
-		"modules-left": ["clock", "network"],
+		"modules-left": [
+			"clock",
+			"network",
+			"custom/updates"
+		],
 		"modules-center": ["hyprland/workspaces"],
 		"modules-right": ["custom/logo"],
 
@@ -20,6 +24,12 @@
 			"tooltip-format-wifi": "Connected to: {essid}",
 			"tooltip-format-disconnected": "Disconnected",
 			"tooltip-format-disabled": "WiFi disabled"
+		},
+		"custom/updates": {
+			"exec": "yay -Qu | wc -l",
+			"interval": 3600,
+			"format": "󰏓",
+			"tooltip-format": "{} packages can be updated"
 		},
 		"hyprland/workspaces": {
 			"disable-scroll": true,
