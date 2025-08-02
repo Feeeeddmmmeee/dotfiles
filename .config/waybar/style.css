@@ -6,26 +6,44 @@
 	font-size: 18px;
 }
 
-window>box{
+tooltip {
+	background-color: @background;
+	border-radius: 10px;
+}
+
+tooltip * {
+	color: @foreground;
+	font-weight: bold;
+	font-size: 12px;
+	margin: 2px;
+}
+
+window>box {
 	margin: 14px 7px 14px 14px;
+	padding: 5px;
 	border-radius: 10px;
 	background-color: mix(@background, transparent, 0.8);
 	color: @foreground;
 }
 
-#clock{
+#clock {
 	color: @foreground;
-	padding: 10px;
+	padding: 5px;
+}
+
+#network {
+	color: @foreground;
+	padding: 5px;
 }
 
 #custom-logo {
 	color: @color3;
 	font-size: 30px;
-	padding: 10px;
+	padding: 5px;
 }
 
 #workspaces {
 	color: @color1;
 	border-radius: 2px;
-	padding: 10px;
+	padding: 5px;
 }

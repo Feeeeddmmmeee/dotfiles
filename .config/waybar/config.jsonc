@@ -5,10 +5,22 @@
 		"layer": "top",
 		"position": "left",
 
-		"modules-left": ["clock"],
+		"modules-left": ["clock", "network"],
 		"modules-center": ["hyprland/workspaces"],
 		"modules-right": ["custom/logo"],
 
+		"clock": {
+			"format": "{:%H\n%M}"
+		},
+		"network": {
+			"interface": "wlp*",
+			"format-wifi": "󰖩",
+			"format-disconnected": "󰖪",
+			"format-disabled": "󰖪",
+			"tooltip-format-wifi": "Connected to: {essid}",
+			"tooltip-format-disconnected": "Disconnected",
+			"tooltip-format-disabled": "WiFi disabled"
+		},
 		"hyprland/workspaces": {
 			"disable-scroll": true,
 			"all-outputs": true,
@@ -20,9 +32,6 @@
 			},
 			"sort-by-number": true 
 		},
-		"clock": {
-    			"format": "{:%H\n%M}"
-    	},
 		"custom/logo": {
 			"format": "󰣇"
 		}
