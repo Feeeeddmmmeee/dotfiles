@@ -13,6 +13,7 @@
 		],
 		"modules-center": ["hyprland/workspaces"],
 		"modules-right": [
+			"wlr/taskbar",
 			"custom/logo"
 		],
 
@@ -30,6 +31,12 @@
 			"tooltip-format-disconnected": "Disconnected",
 			"tooltip-format-disabled": "WiFi disabled"
 		},
+		"custom/updates": {
+			"exec": "yay -Qu | wc -l",
+			"interval": 3600,
+			"format": "󰏓",
+			"tooltip-format": "{} packages can be updated"
+		},
 		"wireplumber": {
 			"format": "{icon}",
 			"format-muted": "󰖁",
@@ -37,11 +44,13 @@
 			"tooltip-format": "{node_name} @ {volume}%"
 
 		},
-		"custom/updates": {
-			"exec": "yay -Qu | wc -l",
-			"interval": 3600,
-			"format": "󰏓",
-			"tooltip-format": "{} packages can be updated"
+		"wlr/taskbar": {
+			"on-click": "activate",
+			"icon-size": 20,
+			"tooltip-format": "{name}",
+			"ignore-list": [
+				"kitty"
+			]
 		},
 		"hyprland/workspaces": {
 			"disable-scroll": true,

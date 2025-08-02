@@ -53,6 +53,16 @@ window>box {
 	padding: 5px;
 }
 
+#taskbar {
+	padding: 5px;
+	background-color: @color3;
+	border-radius: 10px;
+}
+
+#taskbar button {
+	margin: 5px;
+}
+
 #custom-logo {
 	color: @color3;
 	font-size: 30px;
