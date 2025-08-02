@@ -99,7 +99,8 @@ cd dotfiles
 - [x] razer pywal
 - [x] simple bar
 - [x] nvim config refresh
-- [ ] bar with more features (possbily eww)
+- [x] bar with more features (~~possbily eww~~)
+- [ ] reaper daw and audio driver setup in the install script
 - [ ] more things in the install script (locale, time etc.)
 - [ ] fingerprint auth
 - [ ] app launcher
