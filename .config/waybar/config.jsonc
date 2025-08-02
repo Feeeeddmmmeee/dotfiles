@@ -8,10 +8,13 @@
 		"modules-left": [
 			"clock",
 			"network",
-			"custom/updates"
+			"custom/updates",
+			"wireplumber"
 		],
 		"modules-center": ["hyprland/workspaces"],
-		"modules-right": ["custom/logo"],
+		"modules-right": [
+			"custom/logo"
+		],
 
 		"clock": {
 			"format": "{:%H\n%M}",
@@ -19,12 +22,20 @@
 		},
 		"network": {
 			"interface": "wlp*",
+			"format": "󱚵",
 			"format-wifi": "󰖩",
 			"format-disconnected": "󰖪",
 			"format-disabled": "󰖪",
 			"tooltip-format-wifi": "Connected to: {essid}",
 			"tooltip-format-disconnected": "Disconnected",
 			"tooltip-format-disabled": "WiFi disabled"
+		},
+		"wireplumber": {
+			"format": "{icon}",
+			"format-muted": "󰖁",
+			"format-icons": ["󰕿", "󰖀", "󰕾"],
+			"tooltip-format": "{node_name} @ {volume}%"
+
 		},
 		"custom/updates": {
 			"exec": "yay -Qu | wc -l",

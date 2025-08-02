@@ -36,14 +36,20 @@ window>box {
 	padding: 5px;
 }
 
-#workspaces {
-	color: @color1;
-	border-radius: 2px;
+#wireplumber {
+	color: @foreground;
+	font-size: 20px;
 	padding: 5px;
 }
 
 #custom-updates {
 	color: @foreground;
+	padding: 5px;
+}
+
+#workspaces {
+	color: @color1;
+	border-radius: 2px;
 	padding: 5px;
 }
 
