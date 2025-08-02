@@ -68,6 +68,10 @@ window>box {
 	margin: 5px;
 }
 
+#taskbar.empty {
+	all: unset;
+}
+
 #custom-logo {
 	color: @color3;
 	font-size: 30px;
