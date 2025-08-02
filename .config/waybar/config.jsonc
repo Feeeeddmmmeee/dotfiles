@@ -8,6 +8,7 @@
 		"modules-left": [
 			"clock",
 			"network",
+			"battery",
 			"custom/updates",
 			"wireplumber"
 		],
@@ -30,6 +31,12 @@
 			"tooltip-format-wifi": "Connected to: {essid}",
 			"tooltip-format-disconnected": "Disconnected",
 			"tooltip-format-disabled": "WiFi disabled"
+		},
+		"battery": {
+			"format": "{icon}",
+			"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+			"format-charging": "󰂄",
+			"weighted-average": true
 		},
 		"custom/updates": {
 			"exec": "yay -Qu | wc -l",

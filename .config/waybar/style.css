@@ -36,6 +36,11 @@ window>box {
 	padding: 5px;
 }
 
+#battery {
+	color: @foreground;
+	padding: 5px;
+}
+
 #wireplumber {
 	color: @foreground;
 	font-size: 20px;
