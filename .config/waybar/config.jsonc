@@ -14,7 +14,8 @@
 		"modules-right": ["custom/logo"],
 
 		"clock": {
-			"format": "{:%H\n%M}"
+			"format": "{:%H\n%M}",
+			"tooltip": false
 		},
 		"network": {
 			"interface": "wlp*",
@@ -43,7 +44,8 @@
 			"sort-by-number": true 
 		},
 		"custom/logo": {
-			"format": "󰣇"
+			"format": "󰣇",
+			"tooltip": false
 		}
 	}
 ]
