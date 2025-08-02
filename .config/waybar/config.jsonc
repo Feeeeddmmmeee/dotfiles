@@ -36,7 +36,8 @@
 			"format": "{icon}",
 			"format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 			"format-charging": "󰂄",
-			"weighted-average": true
+			"weighted-average": true,
+			"tooltip-format": "{capacity}%, {time} left" 
 		},
 		"custom/updates": {
 			"exec": "yay -Qu | wc -l",
