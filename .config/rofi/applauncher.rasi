@@ -1,11 +1,16 @@
 configuration {
 	modes: "combi,drun,run,ssh";
-	/*	font: "mono 12";*/
+	display-combi: "Select";
+	/* display-drun: "Applications"; */
+	/* display-window: "Windows"; */
+	/* display-run: "Run"; */
+	/* display-ssh: "Ssh"; */
+	font: "mono 13";
 	/*	location: 0;*/
 	/*	yoffset: 0;*/
 	/* xoffset: 500; */
 	/*	fixed-num-lines: true;*/
-	/*	show-icons: false;*/
+	/*	show-icons: true; */
 	/*	preview-cmd: ;*/
 	/*	on-selection-changed: ;*/
 	/*	on-mode-changed: ;*/
