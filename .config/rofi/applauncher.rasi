@@ -1,5 +1,5 @@
 configuration {
-	/*	modes: "window,drun,run,ssh";*/
+	modes: "combi,drun,run,ssh";
 	/*	font: "mono 12";*/
 	/*	location: 0;*/
 	/*	yoffset: 0;*/
@@ -41,7 +41,7 @@ configuration {
 	/*	auto-select: false;*/
 	/*	parse-hosts: false;*/
 	/*	parse-known-hosts: true;*/
-	/*	combi-modes: "window,run";*/
+	combi-modes: "window,drun,run";
 	/*	matching: "normal";*/
 	/*	tokenize: true;*/
 	/*	m: "-5";*/

@@ -101,7 +101,7 @@ esac
 
 echo
 echo "Choose which required packages to install:"
-OPTIONS=$(choose_multiple --selected=* hyprland nvim kitty swww starship python-pywal16 python-pywalfox imagemagick slurp grim wl-clipboard less clang unzip brightnessctl npm waybar ripgrep)
+OPTIONS=$(choose_multiple --selected=* hyprland nvim kitty swww starship python-pywal16 python-pywalfox imagemagick slurp grim wl-clipboard less clang unzip brightnessctl npm waybar ripgrep rofi-wayland)
 install_pkgs $OPTIONS
 
 echo
