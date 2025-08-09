@@ -34,11 +34,11 @@ The installation process can be automated with the install script. Nothing but a
 
 Here is more information about my setup:
 
-- **Distribution:** [arch](https://archlinux.org/)
 - **Window Manager:** [hyprland](https://github.com/hyprwm/Hyprland)
 - **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
 - **Shell:** [zsh](https://www.zsh.org/)
 - **Bar:** [waybar](https://github.com/Alexays/Waybar)
+- **App Launcher:** [rofi](https://github.com/davatorium/rofi)
 - **Color schemes:** [pywal16](https://github.com/eylles/pywal16)
 - **Editor:** [neovim](https://github.com/neovim/neovim)
 - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
@@ -100,10 +100,10 @@ cd dotfiles
 - [x] simple bar
 - [x] nvim config refresh
 - [x] bar with more features (~~possbily eww~~)
+- [x] app launcher
 - [ ] reaper daw and audio driver setup in the install script
 - [ ] more things in the install script (locale, time etc.)
 - [ ] fingerprint auth
-- [ ] app launcher
 - [ ] nvidia-open, nvidia-utils
 - [ ] ~~pc case pywal~~ unlikely to work ://
 
