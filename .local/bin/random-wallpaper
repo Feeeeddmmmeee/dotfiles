@@ -2,4 +2,5 @@
 
 DIR="$HOME/Pictures/wallpapers"
 FILE=$(find -L "$DIR" -type f | shuf -n 1)
+
 .local/bin/set-wallpaper "$FILE"

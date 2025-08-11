@@ -1,7 +1,13 @@
 #!/bin/bash
 
-DIR="$HOME/Pictures/wallpapers"
+DIR="$HOME/Pictures/wallpapers/"
 FILES=$(find -L "$DIR" -type f)
 
+# Path to the wallpaper folder is removed to reduce 
+# clutter as searching for it won't narrow the results
+FILES="${FILES//$DIR/}"
+
 SELECTED=$(echo $FILES | tr ' ' '\n' | rofi -dmenu -p "Select wallpaper" -theme applauncher)
+SELECTED="${DIR}${SELECTED}"
+
 .local/bin/set-wallpaper $SELECTED
