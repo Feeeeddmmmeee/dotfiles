@@ -8,6 +8,12 @@ FILES=$(find -L "$DIR" -type f)
 FILES="${FILES//$DIR/}"
 
 SELECTED=$(echo $FILES | tr ' ' '\n' | rofi -dmenu -p "Select wallpaper" -theme applauncher)
+
+if [ -z "${SELECTED}" ]; 
+then
+	exit 0
+fi
+
 SELECTED="${DIR}${SELECTED}"
 
 .local/bin/set-wallpaper $SELECTED
