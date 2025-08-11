@@ -9,8 +9,8 @@
 			"clock",
 			"network",
 			"battery",
-			"custom/updates",
-			"wireplumber"
+			"wireplumber",
+			"custom/updates"
 		],
 		"modules-center": ["hyprland/workspaces"],
 		"modules-right": [
@@ -40,9 +40,9 @@
 			"tooltip-format": "{capacity}%, {time} left" 
 		},
 		"custom/updates": {
-			"exec": "yay -Qu | wc -l",
+			"exec": "[ \"$(yay -Qu | wc -l)\" -eq 0 ] || echo \"$(yay -Qu | wc -l)\"",
 			"interval": 3600,
-			"format": "󰏓",
+			"format": "󰓦",
 			"tooltip-format": "{} packages can be updated"
 		},
 		"wireplumber": {
