@@ -40,7 +40,7 @@
 			"tooltip-format": "{capacity}%, {time} left" 
 		},
 		"custom/updates": {
-			"exec": "[ \"$(yay -Qu | wc -l)\" -eq 0 ] || echo \"$(yay -Qu | wc -l)\"",
+			"exec": "YAY_UPDATE_COUNT=$(yay -Qu | wc -l); [ \"$YAY_UPDATE_COUNT\" -eq 0 ] || echo \"$YAY_UPDATE_COUNT\"",
 			"interval": 3600,
 			"format": "󰓦",
 			"tooltip-format": "{} packages can be updated"
