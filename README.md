@@ -103,6 +103,7 @@ cd dotfiles
 - [x] nvim config refresh
 - [x] bar with more features (~~possbily eww~~)
 - [x] app launcher
+- [ ] file manager
 - [ ] reaper daw and audio driver setup in the install script
 - [ ] more things in the install script (locale, time etc.)
 - [ ] fingerprint auth
