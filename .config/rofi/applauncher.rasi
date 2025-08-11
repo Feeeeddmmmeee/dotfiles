@@ -1,10 +1,10 @@
 configuration {
-	modes: "combi,drun,run,ssh";
+	modes: "combi,ssh";
 	display-combi: "Select";
 	/* display-drun: "Applications"; */
 	/* display-window: "Windows"; */
 	/* display-run: "Run"; */
-	/* display-ssh: "Ssh"; */
+	display-ssh: "Choose host";
 	font: "mono 13";
 	/*	location: 0;*/
 	/*	yoffset: 0;*/
