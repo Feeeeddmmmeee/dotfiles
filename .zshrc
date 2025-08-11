@@ -25,7 +25,7 @@ alias sdn="shutdown now"
 alias nv="nvim"
 alias icat="kitty +kitten icat"
 
-alias onefetch="onefetch --include-hidden"
+alias gitfetch="onefetch --include-hidden"
 alias neofetch="fastfetch"
 alias matrix="unimatrix -af -l m -s 95"
 
