@@ -85,11 +85,9 @@ cd dotfiles
 | <kbd>SUPER + SHIFT + F</kbd> | Screenshot the entire screen |
 | <kbd>SUPER + W</kbd> | Select a random wallpaper |
 | <kbd>SUPER + SHIFT + W</kbd> | Open a rofi wallpaper picker |
-| <kbd>SUPER + R</kbd> | Open rofi |
+| <kbd>SUPER + R</kbd> | Open Rofi |
 | <kbd>SUPER + D</kbd> | Open Discord |
-| <kbd>SUPER + M</kbd> | Open Spotify |
 | <kbd>SUPER + S</kbd> | Open Steam |
-| <kbd>SUPER + O</kbd> | Open OBS |
 
 <br>
 
