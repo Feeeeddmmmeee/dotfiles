@@ -11,11 +11,11 @@ tooltip {
 	border-radius: 10px;
 }
 
-tooltip * {
+tooltip label {
 	color: @foreground;
 	font-weight: bold;
 	font-size: 12px;
-	margin: 2px;
+	margin: 5px;
 }
 
 window>box {
@@ -58,18 +58,39 @@ window>box {
 	padding: 5px;
 }
 
-#taskbar {
-	padding: 5px;
+#tray {
+	padding: 10px;
 	background-color: @color3;
 	border-radius: 10px;
 }
 
-#taskbar button {
-	margin: 5px;
+#tray menu {
+	background-color: @background;
+	border-radius: 10px;
 }
 
-#taskbar.empty {
-	all: unset;
+#tray menu * {
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#tray menu menuitem {
+	color: @foreground;
+	padding: 5px 15px 5px 15px;
+}
+
+#tray menu menuitem:last-child {
+	border-radius: 0 0 10px 10px;
+	padding: 5px 15px 10px 15px;
+}
+
+#tray menu menuitem:first-child {
+	border-radius: 10px 10px 0 0;
+	padding: 10px 15px 5px 15px;
+}
+
+#tray menu menuitem:hover {
+	background-color: @color1;
 }
 
 #custom-logo {

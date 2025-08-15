@@ -14,7 +14,7 @@
 		],
 		"modules-center": ["hyprland/workspaces"],
 		"modules-right": [
-			"wlr/taskbar",
+			"tray",
 			"custom/logo"
 		],
 
@@ -52,13 +52,9 @@
 			"tooltip-format": "{node_name} @ {volume}%"
 
 		},
-		"wlr/taskbar": {
-			"on-click": "activate",
+		"tray": {
 			"icon-size": 20,
-			"tooltip-format": "{name}",
-			"ignore-list": [
-				"kitty"
-			]
+			"spacing": 10
 		},
 		"hyprland/workspaces": {
 			"disable-scroll": true,
