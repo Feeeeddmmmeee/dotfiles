@@ -1,0 +1,34 @@
+#!/bin/bash
+
+ask_for_password()
+{
+	for i in {1..3}; do
+		PASSWORD=$(rofi -password -dmenu -p "Enter password:" -theme applauncher)
+		nmcli connection delete "$SELECTED"
+		if nmcli d w c "$SELECTED" password $PASSWORD;
+		then
+			break
+		fi
+	done
+}
+
+nmcli d w rescan
+NETWORKS=$(nmcli -t -f SSID dev wifi | grep -v '^$')
+
+# Removing duplicates
+NETWORKS=$(echo "$NETWORKS" | awk '!seen[$0]++')
+
+SELECTED=$(echo "$NETWORKS" | rofi -dmenu -i -p "Select network:" -theme applauncher)
+
+# Exit if user quit before selection
+if [[ $? -ne 0 ]]; 
+then
+	exit 0
+fi
+
+# Try to connect with no/saved password
+# If it doesn't work ask for password
+if ! nmcli d w c "$SELECTED";
+then
+		ask_for_password
+fi

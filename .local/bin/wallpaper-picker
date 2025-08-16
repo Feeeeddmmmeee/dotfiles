@@ -7,7 +7,7 @@ FILES=$(find -L "$DIR" -type f)
 # clutter as searching for it won't narrow the results
 FILES="${FILES//$DIR/}"
 
-SELECTED=$(echo $FILES | tr ' ' '\n' | rofi -dmenu -p "Select wallpaper" -theme applauncher)
+SELECTED=$(echo $FILES | tr ' ' '\n' | rofi -dmenu -p "Select wallpaper:" -theme applauncher)
 
 if [ -z "${SELECTED}" ]; 
 then

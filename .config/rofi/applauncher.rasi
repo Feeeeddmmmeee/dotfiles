@@ -43,7 +43,7 @@ inputbar {
 }
 
 entry {
-    placeholder:        "Search";
+    placeholder:        "Type here...";
     placeholder-color:  @fg;
 }
 
