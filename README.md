@@ -44,7 +44,7 @@ Here is more information about my setup:
 - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
 - **Wallpaper Daemon:** [swww](https://github.com/LGFae/swww)
 
-## :desktop_computer: Screenshots 
+## :camera: Screenshots 
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ebcd5393-73a1-4724-9f86-0f3e7968b0d0" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c6048325-c4d4-4108-bf3e-93b6a5f3352f" />
