@@ -88,7 +88,6 @@ cd dotfiles
 | <kbd>SUPER + I</kbd> | Open a Rofi wifi picker |
 | <kbd>SUPER + R</kbd> | Open Rofi |
 | <kbd>SUPER + D</kbd> | Open Discord |
-| <kbd>SUPER + S</kbd> | Open Steam |
 
 <br>
 
