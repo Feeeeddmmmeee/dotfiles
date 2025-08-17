@@ -20,7 +20,7 @@ _____ _______   ____ |  |__     __| _/_____/  |__/ ____\__|  |   ____   ______
 <br>
 
 <h1 align="center">
-    <a href="#desktop_computer-screenshots">Screenshots</a> ･
+    <a href="#camera-screenshots">Screenshots</a> ･
     <a href="#inbox_tray-installation">Installation</a> ･
     <a href="#%EF%B8%8F-keybinds">Keybinds</a>
 </h1>
