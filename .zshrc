@@ -40,3 +40,6 @@ alias grep="grep --color=auto"
 
 # For tty
 # source ~/.cache/wal/colors-tty.sh
+
+# Zoxide
+eval "$(zoxide init zsh --cmd cd)"
