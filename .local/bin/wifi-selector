@@ -76,7 +76,10 @@ else
 fi
 
 # Removing duplicates
-NETWORKS=$(echo "$NETWORKS" | awk -F: '!seen[$1]++')
+NETWORKS=$(echo "$NETWORKS" | awk -F: '{
+	if ($1 == "<hidden>" || !seen[$1]++) 
+		print
+	}')
 
 # Formatting the signal value
 NETWORKS=$(echo "$NETWORKS" | awk -F: '{printf "%-42s %8s\n", $1, " (" $2 "/100)"}')
