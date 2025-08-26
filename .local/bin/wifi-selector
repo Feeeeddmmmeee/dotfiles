@@ -4,8 +4,15 @@ ask_for_password()
 {
 	for i in {1..3}; do
 		PASSWORD=$(rofi -password -dmenu -p "Enter password:" -theme applauncher)
+
 		nmcli connection delete "$SELECTED"
 		if nmcli d w c "$SELECTED" password "$PASSWORD";
+		then
+			break
+		fi
+
+		# Quit immediately if user didn't input anything
+		if [ -z "${PASSWORD}" ];
 		then
 			break
 		fi
@@ -13,10 +20,14 @@ ask_for_password()
 }
 
 nmcli d w rescan
-NETWORKS=$(nmcli -t -f SSID dev wifi | grep -v '^$')
+NETWORKS=$(nmcli -t -f SSID,SIGNAL dev wifi | grep -v '^:')
+# sed 's/^:/<hidden>:/' can rename hidden networks to <hidden> instead
 
 # Removing duplicates
-NETWORKS=$(echo "$NETWORKS" | awk '!seen[$0]++')
+NETWORKS=$(echo "$NETWORKS" | awk -F: '!seen[$1]++')
+
+# Formatting the signal value
+NETWORKS=$(echo "$NETWORKS" | awk -F: '{printf "%-42s %8s\n", $1, " (" $2 "/100)"}')
 
 SELECTED=$(echo "$NETWORKS" | rofi -dmenu -i -p "Select network:" -theme applauncher)
 
