@@ -110,7 +110,6 @@ cd dotfiles
 
 ## :exclamation: Known Issues
 - Every once in a while after changing my keyboard's backlight settings it turns off and stops responding for a few seconds.
-- After booting up the waybar tray widget is displayed even when no apps are open, though it works just fine after you open and close any supported app.
 
 <br>
 
