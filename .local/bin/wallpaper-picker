@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DIR="$HOME/Pictures/wallpapers/"
 FILES=$(find -L "$DIR" -type f)
