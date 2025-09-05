@@ -2,6 +2,11 @@
 
 SCRIPT_NAME=$(basename $0)
 
+success_notification()
+{
+	notify-send "WiFi Connection" "Successfully connected to $SELECTED"
+}
+
 ask_for_password()
 {
 	for i in {1..3}; do
@@ -10,6 +15,7 @@ ask_for_password()
 		nmcli connection delete "$SELECTED"
 		if nmcli d w c "$SELECTED" password "$PASSWORD";
 		then
+			success_notification
 			break
 		fi
 
@@ -82,6 +88,7 @@ NETWORKS=$(echo "$NETWORKS" | awk -F: '!seen[$1]++ || $1=="<hidden>"')
 NETWORKS=$(echo "$NETWORKS" | awk -F: '{printf "%-42s %8s\n", $1, " (" $2 "/100)"}')
 
 SELECTED=$(echo "$NETWORKS" | rofi -dmenu -i -p "Select network:" -theme applauncher)
+SELECTED=$(printf '%s\n' "$SELECTED" | sed 's/[[:space:]]*(\([0-9][0-9]*\)\/100)[[:space:]]*$//')
 
 # Exit if user quit before selection
 if [[ $? -ne 0 ]]; 
@@ -93,5 +100,7 @@ fi
 # If it doesn't work ask for password
 if ! nmcli d w c "$SELECTED";
 then
-		ask_for_password
+	ask_for_password
+else
+	success_notification
 fi
