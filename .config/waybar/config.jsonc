@@ -31,7 +31,7 @@
 			"tooltip-format-wifi": "Connected to: {essid}",
 			"tooltip-format-disconnected": "Disconnected",
 			"tooltip-format-disabled": "WiFi disabled",
-			"on-click": "wifi-selector"
+			"on-click": "~/.local/bin/wifi-selector"
 		},
 		"battery": {
 			"format": "{icon}",
