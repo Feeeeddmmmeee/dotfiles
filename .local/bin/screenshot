@@ -5,12 +5,12 @@ OUTPUT="$HOME/Pictures/screenshots/$(date +%Y-%m-%d-%T)-screenshot.png"
 case "$1" in
 	"select") 
 		grim -g "$(slurp)" $OUTPUT && wl-copy < $OUTPUT
-		# notify-send "Screenshot taken." "$OUTPUT" -u normal
+		notify-send "Screenshot taken." "$OUTPUT" -u normal -i $OUTPUT
 		exit
 		;;
 	*) 
 		grim $OUTPUT && wl-copy < $OUTPUT
-		# notify-send "Screenshot taken." "$OUTPUT" -u normal
+		notify-send "Screenshot taken." "$OUTPUT" -u normal -i $OUTPUT
 		exit
 		;;
 esac

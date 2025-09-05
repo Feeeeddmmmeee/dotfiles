@@ -2,3 +2,5 @@
 
 WALLPAPER=$1
 wal -n -i $WALLPAPER && swww img --transition-type wipe --transition-fps 60 --transition-angle 30 --transition-step 90 $WALLPAPER && pywalfox update && razer-cli -a -b 100 
+
+killall dunst; dunst -config ~/.cache/wal/dunstrc
