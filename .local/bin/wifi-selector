@@ -72,7 +72,7 @@ while [[ $# -gt 0 ]]; do
 	esac
 done
 
-nmcli d w rescan
+nmcli d w rescan &
 
 if $SHOW_HIDDEN;
 then
