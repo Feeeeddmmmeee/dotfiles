@@ -1,5 +1,6 @@
 # Prompt
 eval "$(starship init zsh)"
+eval "$(atuin init zsh)"
 
 # Repeat last command with sudo
 pls() {

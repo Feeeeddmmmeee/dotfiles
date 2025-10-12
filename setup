@@ -53,7 +53,7 @@ remove_conflicts()
 	for file in "$@"; do
 		if [ -e $file ]; then
 			echo "[ INFO ] $file already exists! Moving to $file.backup..."
-			mv $file "$file.backup"
+			mv $file ".$file.backup"
 		fi
 	done
 }
@@ -106,7 +106,7 @@ install_pkgs $OPTIONS
 
 echo
 echo "Choose which optional packages to install:"
-OPTIONS=$(choose_multiple --selected=* btop firefox fastfetch onefetch openssh playerctl spotify discord unimatrix xdg-desktop-portal-hyprland fzf)
+OPTIONS=$(choose_multiple --selected=* btop firefox fastfetch onefetch openssh playerctl spotify discord unimatrix xdg-desktop-portal-hyprland fzf atuin)
 install_pkgs $OPTIONS
 
 echo
@@ -155,7 +155,7 @@ if (gum confirm "Do you want to use GNU Stow to manage your configs?"); then
 	echo "=> Successfully moved dotfiles to $DOT_PATH..."
 
 	cd $HOME 
-	mkdir -p local/bin
+	mkdir -p .local/bin
 	mkdir -p Pictures/screenshots
 	mkdir -p Pictures/wallpapers
 	remove_conflicts .zshrc .bashrc .zprofile
