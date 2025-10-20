@@ -22,7 +22,7 @@ window>box {
 	margin: 14px 7px 14px 14px;
 	padding: 5px;
 	border-radius: 10px;
-	background-color: mix(@background, transparent, 0.8);
+	background-color: mix(@background, transparent, 0.7);
 	color: @foreground;
 }
 
