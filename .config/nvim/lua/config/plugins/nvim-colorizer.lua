@@ -1,3 +1,5 @@
+# Renders hex, rgb, etc
+
 return {
 	"norcalli/nvim-colorizer.lua",
 	config = function ()
