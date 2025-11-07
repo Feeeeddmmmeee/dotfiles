@@ -10,12 +10,17 @@ pls() {
 # Path
 export PATH=$PATH:~/.local/bin/
 
+gpo() {
+	local branch
+	branch="$(git rev-parse --abbrev-ref HEAD)"
+	git push origin "$branch"
+}
+
 # Aliases
 alias gs="git status"
 alias ga="git add"
 alias gl="git log"
 alias gc="git commit -m"
-alias gpo="git push origin $(git rev-parse --abbrev-ref HEAD)"
 
 alias la="ls -A"
 alias ll="ls -lA"
