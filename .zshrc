@@ -10,13 +10,13 @@ pls() {
 # Path
 export PATH=$PATH:~/.local/bin/
 
-git-push() {
+gpush() {
 	local branch
 	branch="$(git rev-parse --abbrev-ref HEAD)"
 	git push origin "$branch"
 }
 
-git-pull() {
+gpull() {
 	local branch
 	branch="$(git rev-parse --abbrev-ref HEAD)"
 	git pull origin "$branch"
