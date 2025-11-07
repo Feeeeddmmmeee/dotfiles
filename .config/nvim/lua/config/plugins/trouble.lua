@@ -3,7 +3,7 @@ return {
 	config = function()
 		local trouble = require("trouble")
 
-		vim.keymap.set("n", "<leader>pd", ":Trouble diagnostics<CR>")
+		vim.keymap.set("n", "<leader>pd", ":Trouble diagnostics toggle<CR>")
 
 		trouble.setup()
 	end,
