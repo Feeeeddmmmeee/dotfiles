@@ -10,10 +10,16 @@ pls() {
 # Path
 export PATH=$PATH:~/.local/bin/
 
-gpo() {
+git-push() {
 	local branch
 	branch="$(git rev-parse --abbrev-ref HEAD)"
 	git push origin "$branch"
+}
+
+git-pull() {
+	local branch
+	branch="$(git rev-parse --abbrev-ref HEAD)"
+	git pull origin "$branch"
 }
 
 # Aliases
