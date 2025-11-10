@@ -27,6 +27,7 @@ alias gs="git status"
 alias ga="git add"
 alias gl="git log"
 alias gc="git commit -m"
+alias gch="git checkout"
 
 alias la="ls -A"
 alias ll="ls -lA"
