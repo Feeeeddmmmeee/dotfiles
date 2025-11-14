@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_NAME=$(basename $0)
+SCRIPT_NAME=$(basename "$0")
 
 success_notification()
 {
@@ -85,7 +85,7 @@ fi
 NETWORKS=$(echo "$NETWORKS" | awk -F: '!seen[$1]++ || $1=="<hidden>"')
 
 # Formatting the signal value
-NETWORKS=$(echo "$NETWORKS" | awk -F: '{printf "%-42s %8s\n", $1, " (" $2 "/100)"}')
+NETWORKS=$(echo "$NETWORKS" | awk -F: '{printf "%-41s %10s\n", $1, " (" $2 "/100)"}')
 
 SELECTED=$(echo "$NETWORKS" | rofi -dmenu -i -p "Select network:" -theme applauncher)
 
