@@ -9,3 +9,4 @@ eval "$(starship init bash)"
 
 # Path
 export PATH=$PATH:~/.local/bin/
+export EDITOR=nvim

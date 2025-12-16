@@ -9,6 +9,7 @@ pls() {
 
 # Path
 export PATH=$PATH:~/.local/bin/
+export EDITOR=nvim
 
 gpush() {
 	local branch
