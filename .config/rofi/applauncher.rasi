@@ -6,6 +6,7 @@ configuration {
 	/* display-run: "Run"; */
 	display-ssh: "Choose host:";
 	combi-modes: "drun,run";
+	terminal: "kitty";
 }
 
 * {
