@@ -32,7 +32,7 @@ return {
 
 		vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {})
 		vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<CR>", {})
-		vim.keymap.set("n", "<leader>fs", ":Telescope live_grep<CR>", {})
+		vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", {})
 		vim.keymap.set("n", "<leader>fh", ":Telescope command_history<CR>", {})
 
 		local grep_active_word = function()
