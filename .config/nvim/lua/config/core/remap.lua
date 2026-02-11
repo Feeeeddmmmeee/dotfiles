@@ -16,7 +16,7 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 
 -- Select all
 map("n", "<leader>a", "ggVG")
-map("i", "<leader>a", "<ESC>ggVG")
+map("v", "<leader>a", "<ESC>ggVG")
 
 -- Copying into system clipboard
 map("n", "<leader>y", "\"+y")
