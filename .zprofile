@@ -1,1 +1,1 @@
-Hyprland
+start-hyprland
