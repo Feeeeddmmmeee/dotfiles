@@ -36,6 +36,7 @@ alias ..="cd .."
 alias :q="exit"
 alias :wq="exit"
 alias sdn="shutdown now"
+alias rbl="sudo efibootmgr --bootnext 0004; reboot"
 alias nv="nvim"
 alias icat="kitty +kitten icat"
 
