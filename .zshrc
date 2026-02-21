@@ -7,6 +7,20 @@ pls() {
 	sudo $(fc -ln -1)
 }
 
+# Adds and then commits the selected files
+git-add-commit()
+{
+	if [ "$#" -lt 2 ]; then
+		echo "Invalid usage! $0 file1 [file2 ... fileN] commitMsg"
+		return 1
+	fi
+
+	commitMsg="${@: -1}"
+	files=("${@[1,-2]}")
+	git add $files
+	git commit -m $commitMsg
+}
+
 # Path
 export PATH=$PATH:~/.local/bin/
 export EDITOR=nvim
@@ -29,6 +43,7 @@ alias ga="git add"
 alias gl="git log"
 alias gc="git commit -m"
 alias gch="git checkout"
+alias gac="git-add-commit"
 
 alias la="ls -A"
 alias ll="ls -lA"
