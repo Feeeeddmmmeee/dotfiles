@@ -28,6 +28,7 @@
 			"format-wifi": "󰖩",
 			"format-disconnected": "󰖪",
 			"format-disabled": "󰖪",
+			"tooltip-format": "...",
 			"tooltip-format-wifi": "Connected to: {essid}",
 			"tooltip-format-disconnected": "Disconnected",
 			"tooltip-format-disabled": "WiFi disabled",
