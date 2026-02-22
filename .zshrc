@@ -10,20 +10,28 @@ pls() {
 # Adds and then commits the selected files
 git-add-commit()
 {
-	if [ "$#" -lt 2 ]; then
-		echo "Invalid usage! $0 file1 [file2 ... fileN] commitMsg"
+	if [ "$#" -lt 1 ]; then
+		echo "Invalid usage! $0 [file1 ... fileN] commitMsg"
 		return 1
 	fi
 
+	# if given only one argument assumed you just want to add everything
+	local files="."
+	if [ "$#" -ge 2 ]; then
+		files=("${@[1,-2]}")
+	fi
+
 	commitMsg="${@: -1}"
-	files=("${@[1,-2]}")
 	git add $files
-	git commit -m $commitMsg
+	git commit -m "$commitMsg"
 }
 
 # Path
 export PATH=$PATH:~/.local/bin/
 export EDITOR=nvim
+
+# Vulkan SDK
+source ~/vulkansdk/default/setup-env.sh
 
 gpush() {
 	local branch
