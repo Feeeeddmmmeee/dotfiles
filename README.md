@@ -105,7 +105,6 @@ cd dotfiles
 - [ ] reaper daw and audio driver setup in the install script
 - [ ] more things in the install script (locale, time etc.)
 - [ ] fingerprint auth
-- [ ] nvidia-open, nvidia-utils
 - [ ] ~~pc case pywal~~ unlikely to work ://
 
 ## :exclamation: Known Issues
