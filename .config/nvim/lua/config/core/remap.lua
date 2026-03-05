@@ -23,8 +23,8 @@ map("n", "<leader>y", "\"+y")
 map("v", "<leader>y", "\"+y")
 
 -- Vertical and horizontal split
-map("n", "<C-]>", ":vs<CR>")
-map("n", "<C-->", ":sp<CR>")
+map("n", "<leader>]", ":vs<CR>")
+map("n", "<leader>-", ":sp<CR>")
 
 -- Finding and replacing a word in entire file
 map("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
