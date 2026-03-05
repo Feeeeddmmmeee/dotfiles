@@ -13,3 +13,6 @@ vim.opt.scrolloff = 10
 vim.g.mapleader = " "
 
 vim.o.undofile = true
+
+vim.opt.splitright = true
+vim.opt.splitbelow = true
