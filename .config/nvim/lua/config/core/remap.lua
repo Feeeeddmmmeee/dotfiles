@@ -10,6 +10,9 @@ end
 -- Open Lazy menu
 map("n", "<leader>l", ":Lazy<CR>")
 
+-- Open mason
+map("n", "<leader>m", ":Mason<CR>")
+
 -- Moving code around in visual mode
 map("v", "K", ":m '<-2<CR>gv=gv")
 map("v", "J", ":m '>+1<CR>gv=gv")
