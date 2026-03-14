@@ -21,6 +21,10 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("n", "<leader>a", "ggVG")
 map("v", "<leader>a", "<ESC>ggVG")
 
+-- Format active buffer
+map("n", "<leader>=", "mzggVG=`z")
+map("v", "<leader>=", "<ESC>mzggVG=`z")
+
 -- Copying into system clipboard
 map("n", "<leader>y", "\"+y")
 map("v", "<leader>y", "\"+y")
