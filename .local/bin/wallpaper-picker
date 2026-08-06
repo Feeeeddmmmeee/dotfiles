@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DIR="$HOME/Pictures/wallpapers/"
-FILES=$(find -L "$DIR" -type f)
+FILES=$(find -L "$DIR" -type f -not -path '*/.*')
 
 # Path to the wallpaper folder is removed to reduce 
 # clutter as searching for it won't narrow the results
