@@ -42,7 +42,7 @@ Here is more information about my setup:
 - **Color schemes:** [pywal16](https://github.com/eylles/pywal16)
 - **Editor:** [neovim](https://github.com/neovim/neovim)
 - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
-- **Wallpaper Daemon:** [swww](https://github.com/LGFae/swww)
+- **Wallpaper Daemon:** [awww](https://codeberg.org/LGFae/awww)
 
 ## :camera: Screenshots 
 
