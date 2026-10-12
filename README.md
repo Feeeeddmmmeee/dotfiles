@@ -43,6 +43,7 @@ Here is more information about my setup:
 - **Editor:** [neovim](https://github.com/neovim/neovim)
 - **Browser:** [firefox](https://www.mozilla.org/en-US/firefox)
 - **Wallpaper Daemon:** [awww](https://codeberg.org/LGFae/awww)
+- **Wallpapers:** [repo](https://github.com/Feeeeddmmmeee/wallpapers)
 
 ## :camera: Screenshots 
 
