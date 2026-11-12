@@ -1,6 +1,6 @@
 -- Mapping function
 local function map(mode, keybind, action, opts)
-	local options = { noremap = true }
+	local options = { noremap = true}
 	if opts then
 		options = vim.tbl_extend("force", options, opts)
 	end
@@ -35,3 +35,32 @@ map("n", "<leader>-", ":sp<CR>")
 
 -- Finding and replacing a word in entire file
 map("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+
+-- Keep selection when indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
+
+-- Make file executable
+map("n", "<leader>x", "<cmd>!chmod +x %<CR>")
+
+-- Restart config
+map("n", "<leader>re", "<cmd>restart<CR>")
+
+-- Lsp bindings
+vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover({
+        border = "rounded",
+    })
+end, { desc = "LSP Hover Documentation" })
+
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, {
+    desc = "Go to Definition",
+})
+
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {
+    desc = "Rename Symbol",
+})
+
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {
+    desc = "Code Action",
+})

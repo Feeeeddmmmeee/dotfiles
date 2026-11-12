@@ -1,8 +1,9 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	branch = "0.1.x",
+	version = "*",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope-ui-select.nvim",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
 			build = "make",
@@ -27,13 +28,22 @@ return {
 				find_files = {
 					hidden = true
 				}
+			},
+			extensions = {
+				["ui-select"] = require("telescope.themes").get_dropdown({
+					winblend = 0,
+					layout_config = {
+						width = 0.5,
+						height = 0.4,
+					}
+				})
 			}
 		})
 
-		vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", {})
-		vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<CR>", {})
-		vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", {})
-		vim.keymap.set("n", "<leader>fh", ":Telescope command_history<CR>", {})
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+		vim.keymap.set("n", "<leader>fo", builtin.oldfiles, {})
+		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+		vim.keymap.set("n", "<leader>fh", builtin.command_history, {})
 
 		local grep_active_word = function()
 			return builtin.grep_string({search = vim.fn.expand("<cword>")})
@@ -43,5 +53,6 @@ return {
 		vim.api.nvim_create_user_command("GrepCword", grep_active_word, {})
 
 		telescope.load_extension("fzf")
+		telescope.load_extension("ui-select")
 	end,
 }
